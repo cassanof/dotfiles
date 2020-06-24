@@ -1,0 +1,33 @@
+Description: Fix FTBFS on mipsel* due to custom library search paths.
+ This patch removes library search -L/usr/lib and include paths
+ defined by upstream. Since all the libraries and headers needed are
+ available in default path these flags are redundant also since
+ /usr/lib may have different purpose on various architecture like
+ mips* it causes FTBFS. Thanks to YunQiang Su for bringing this up.
+Author: Vasudev Kamath <kamathvasudev@gmail.com>
+Last-Updated: 2016-03-26
+Bug-Debian: https://bugs.debian.org/722765
+
+--- a/config.mk	2016-03-26 23:36:45.914814792 +0100
++++ b/config.mk	2016-03-26 23:37:20.275092945 +0100
+@@ -7,9 +7,6 @@
+ PREFIX = /usr/local
+ MANPREFIX = ${PREFIX}/share/man
+ 
+-X11INC = /usr/X11R6/include
+-X11LIB = /usr/X11R6/lib
+-
+ # Xinerama, comment if you don't want it
+ XINERAMALIBS  = -lXinerama
+ XINERAMAFLAGS = -DXINERAMA
+@@ -21,8 +18,8 @@
+ #FREETYPEINC = ${X11INC}/freetype2
+ 
+ # includes and libs
+-INCS = -I${X11INC} -I${FREETYPEINC}
+-LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}
++INCS = -I${FREETYPEINC}
++LIBS = -lX11 ${XINERAMALIBS} ${FREETYPELIBS}
+ 
+ # flags
+ CPPFLAGS += -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
