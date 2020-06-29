@@ -55,6 +55,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 
+" YCM stuff
+let g:ycm_global_ycm_extra_conf = '~/.vim_runtime/.ycm_extra_conf.py'
+
 " use goimports for formatting
 let g:go_fmt_command = "goimports"
 
