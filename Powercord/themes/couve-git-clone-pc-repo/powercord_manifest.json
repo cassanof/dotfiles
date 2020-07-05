@@ -1,0 +1,9 @@
+ {
+    "name": "Couve",
+    "description": "A new look to discord",
+    "version": "AutoUpdate",
+    "author": "A user#0001",
+    "license": "GNU GPL",
+    "theme": "couve.css",
+    "consent": "false"
+}

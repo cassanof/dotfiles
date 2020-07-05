@@ -28,6 +28,7 @@ let &t_EI = "\e[2 q"
 augroup myCmds
 au!
 autocmd VimEnter * silent !echo -ne "\e[2 q"
+autocmd VimLeave * silent !echo -ne "\e[6 q"
 augroup END
 
 
