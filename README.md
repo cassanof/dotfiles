@@ -5,7 +5,7 @@ reminders:
 ```
 install vim-gui-common if vim --version shows no gui
 install watchdog with pip3
-install python headers (apt install python3-dev)
+install python headers if not in arch (apt install python3-dev)
 compile YouCompleteMe with ./install.py --clang-completer --go-completer
 ```
-
+terminal colorcheme: wal --theme base16-spacemacs (using pywal)  
