@@ -9,7 +9,7 @@ emacs*background:   #1f2022
 URxvt*foreground:   #a3a3a3
 XTerm*foreground:   #a3a3a3
 UXTerm*foreground:  #a3a3a3
-URxvt*background:   [100]#1f2022
+URxvt*background:   [95]#1f2022
 XTerm*background:   #1f2022
 UXTerm*background:  #1f2022
 URxvt*cursorColor:  #a3a3a3
