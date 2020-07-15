@@ -228,7 +228,7 @@ Then, write ```:wq``` to save and quit vi/vim
 We are almost done! last things we have to do is un-mount the drives and reboot.
 
 To do so, start exiting chroot by typing in ```exit``` , you will be prompted back to the "red and white" zsh shell.  
-Now, type umount -R /mnt  
+Now, type ```umount -R /mnt``` 
 Then, shutdown the system by either writing ```shutdown now``` or by pressing the power button, when the system power is off, remove the usb drive/disk with the archiso and power the system back on.
 
 If the installation went correctly you should see the grub bootloader screen, and soon you will be asked to insert login credentials.  
