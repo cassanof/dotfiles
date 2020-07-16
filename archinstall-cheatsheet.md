@@ -195,9 +195,9 @@ I found en_US at the 176th line.
 Then, do ```locale-gen``` to generate the locales  
 Now, create ```/etc/locale.conf``` and select your language using this syntax:
 ```
-LANG=en-US.UTF-8
+LANG=en_US.UTF-8
 ```
-Feel free to change ```en-US.UTF-8``` to your own language  
+Feel free to change ```en_US.UTF-8``` to your own language  
 
 Now, you need to setup the timezone. First of all do the command: ```timedatectl set-ntp true```, then use the command ```date``` to check if the time is correct, if its not, do this command to list all timezones:  
 ```timedatectl list-timezones``` (press q to quit)  
