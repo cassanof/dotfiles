@@ -1,4 +1,0 @@
-?package(dwm):needs="wm" section="Window Managers"\
-  title="Dwm" longtitle="Dynamic window manager" \
-  description="Dwm is a minimalistic window manager."\
-  command="/usr/bin/dwm"
