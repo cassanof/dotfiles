@@ -42,7 +42,7 @@ DISABLE_LS_COLORS="false"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -110,7 +110,7 @@ export GOPATH="$HOME/go"
 
 
 # ls colors and aliases
-LS_COLORS='di=1;34:fi=37:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=32;100:*.png=35:*.gif=36:*.jpg=35:*.c=92:*.java=92:*.go=92:*.jar=33:*.py=92:*.h=90:*.txt=94:*.md=31;104:*.doc=31;104:*.docx=31;104:*.odt=31;104:*.csv=31;102:*.xlsx=31;102:*.xlsm=31;102:*.rb=31:*.cpp=92:*.sh=96:*.css=90:*.json=90:*.js=92:*.ts=92:*.html=96:*.pug=96:*.cfg=96:*.conf=96:*.config=96:*.zip=4;33:*.gz=4;33:*.xz=4;33:*.mp4=105:*.mp3=106'
+LS_COLORS='di=1;34:fi=37:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=32;100:*.png=35:*.gif=36:*.jpg=35:*.c=92:*.java=92:*.go=92:*.jar=33:*.py=92:*.h=90:*.txt=94:*.md=7;34:*.doc=7;34:*.docx=7;34:*.odt=7;34:*.csv=7;32:*.xlsx=7;32:*.xlsm=7;32:*.rb=31:*.cpp=92:*.sh=96:*.css=90:*.json=90:*.js=92:*.ts=92:*.html=96:*.pug=96:*.cfg=96:*.conf=96:*.config=96:*.zip=4;33:*.gz=4;33:*.xz=4;33:*.mp4=105:*.mp3=106'
 export LS_OPTIONS='--color=auto'
 alias ls='ls $LS_OPTIONS'
 alias ll='ls $LS_OPTIONS -Flah'
