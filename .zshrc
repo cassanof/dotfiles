@@ -110,10 +110,11 @@ export GOPATH="$HOME/go"
 
 
 # ls colors and aliases
-LS_COLORS='di=1;34:fi=37:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=32;100:*.png=35:*.gif=36:*.jpg=35:*.c=92:*.java=92:*.go=92:*.jar=33:*.py=92:*.h=90:*.txt=94:*.md=7;34:*.doc=7;34:*.docx=7;34:*.odt=7;34:*.csv=7;32:*.xlsx=7;32:*.xlsm=7;32:*.rb=31:*.cpp=92:*.sh=96:*.css=90:*.json=90:*.js=92:*.ts=92:*.html=96:*.pug=96:*.cfg=96:*.conf=96:*.config=96:*.zip=4;33:*.gz=4;33:*.xz=4;33:*.mp4=105:*.mp3=106'
+LS_COLORS='di=1;34:fi=37:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=32;100:*.png=35:*.gif=36:*.jpg=35:*.c=92:*.vim=92:*.java=92:*.go=92:*.jar=33:*.py=92:*.h=90:*.txt=94:*.md=7;34:*.doc=7;34:*.docx=7;34:*.odt=7;34:*.csv=7;32:*.xlsx=7;32:*.xlsm=7;32:*.rb=31:*.cpp=92:*.sh=96:*.css=90:*.json=90:*.js=92:*.ts=92:*.html=96:*.pug=96:*.cfg=96:*.conf=96:*.config=96:*.zip=4;33:*.gz=4;33:*.xz=4;33:*.mp4=105:*.mp3=106'
 export LS_OPTIONS='--color=auto'
 alias ls='ls $LS_OPTIONS'
 alias ll='ls $LS_OPTIONS -Flah'
 alias l='ls $LS_OPTIONS -Fa'
 
 # if there is no line under here, the install script wasn't used or something went wrong
+export DOTFILESDIR=/home/elleven/code/dotfiles
