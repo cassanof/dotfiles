@@ -66,7 +66,12 @@ XClock*secondColor: rgba:f8/f8/f8/ff
 
 !!! URxvt Settings Below - must install urxvt-perls package for some stuff
 ! font comes with the nerd-fonts-complete package from the AUR
-URxvt.font: xft:Inconsolata Nerd Font Mono:size=16
+URxvt.font: xft:Inconsolata Nerd Font Mono:size=16, \
+            xft:NotoEmoji Nerd Font Mono:size=16, \
+            xft:FontAwesome:size=16, \
+            xft:icomoon:size=16, \
+            xft:octicons:size=16
+
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
@@ -99,7 +104,7 @@ URxvt.keysym.M-v: perl:clipboard:paste
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: brave
 URxvt.url-select.underline: true
-URxvt.url-select.button: 1
+URxvt.url-select.button: 2
 
 !! Fullscreen - Alt + f
 ! must install wmctrl package
