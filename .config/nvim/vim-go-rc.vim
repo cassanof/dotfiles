@@ -8,5 +8,11 @@ let g:go_highlight_functions = 1
 let g:go_highlight_types = 1
 let g:go_highlight_function_calls = 1
 
-" write and run current go file
-map <F5> :w <enter> :GoRun <enter>
+let g:go_fmt_autosave = 1
+let g:go_fmt_options = {
+  \ 'gofmt': '-s',
+  \ 'goimports': '',
+  \ }
+
+let g:go_imports_autosave = 1
+

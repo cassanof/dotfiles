@@ -12,9 +12,9 @@ UXTerm*foreground:  #a3a3a3
 URxvt*background:   [90]#1f2022
 XTerm*background:   #1f2022
 UXTerm*background:  #1f2022
-URxvt*cursorColor:  #a3a3a3
-XTerm*cursorColor:  #a3a3a3
-UXTerm*cursorColor: #a3a3a3
+URxvt*cursorColor:  #80f2f0
+XTerm*cursorColor:  #80f2f0
+UXTerm*cursorColor: #80f2f0
 URxvt*borderColor:  [100]#1f2022
 
 ! Colors 0-15.

@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Jetbrains Mono:pixelsize=14:antialias=true:autohint=true";
-static char *font2[] = { "Jetbrains Mono Regular:pixelsize=10:antialias=true:autohint=true" };
-static int borderpx = 2;
+static char *font = "Jetbrains Mono:pixelsize=16:antialias=true:autohint=true";
+static char *font2[] = { "Inconsolata Nerd Font Mono:pixelsize=16:antialias=true:autohint=true" };
+static int borderpx = 10;
 
 /*
  * What program is execed by st depends of these precedence rules:
