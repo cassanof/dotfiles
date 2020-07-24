@@ -117,4 +117,3 @@ alias ll='ls $LS_OPTIONS -Flah'
 alias l='ls $LS_OPTIONS -Fa'
 
 # if there is no line under here, the install script wasn't used or something went wrong
-export DOTFILESDIR=/home/elleven/code/dotfiles
