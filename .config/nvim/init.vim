@@ -48,7 +48,6 @@ source ~/.config/nvim/gruvbox-rc.vim
 set termguicolors
 
 
-
 " yes
 inoremap jj <ESC>
 
@@ -100,12 +99,20 @@ set scrolloff=10
 " remember cursor location
 set viminfo='100,\"2500,:200,%,n~/.cache/.viminfo
 
+" set encoding
+set encoding=utf-8
+set fileencoding=utf-8
 
 " Character 'limit' line
 set colorcolumn=110
 
+" don't continue to format comment tags after enter
+set formatoptions-=cro
 
+" more buffers open
 set hidden 
+
+" update everything, faster completion
 set updatetime=300
 
 " don't give |ins-completion-menu| messages.
@@ -114,15 +121,3 @@ set shortmess+=c
 " don't show signcolumn
 set signcolumn=no
 
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction

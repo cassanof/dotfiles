@@ -24,3 +24,5 @@ coc-java
 coc-go
 coc-clangd
 ```
+coc-settings possible  
+https://github.com/golang/tools/blob/master/gopls/doc/settings.md
