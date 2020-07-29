@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=0.8.2
+Encoding=UTF-8
+Name=st
+Comment=Suckless Terminal, a terminal emulator that does not suck
+Exec=st
+Icon=st
+Terminal=false
+Type=Application
+Categories=Application;System;TerminalEmulator;

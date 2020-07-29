@@ -32,6 +32,9 @@ nmap <F2> <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+" Remap for quickfix window
+nmap <leader>k <Plug>(coc-quickfix)
+
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -46,8 +49,6 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)
-" Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Close completion window when completion is done
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif

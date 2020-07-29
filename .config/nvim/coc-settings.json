@@ -1,5 +1,6 @@
 {
   "go.goplsOptions": {
-    "completeUnimported": true
+    "completeUnimported": true,
+    "usePlaceholders": true
   }
 }

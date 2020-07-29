@@ -24,7 +24,11 @@ Plug 'xianzhon/vim-code-runner'
 Plug 'elleven11/vim-runner'
 Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'liuchengxu/vim-which-key'
+Plug 'pacha/vem-tabline'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
 
 Plug 'morhetz/gruvbox'
 
@@ -32,36 +36,27 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 
-" sourcing rcs
-source ~/.config/nvim/airline-rc.vim
-source ~/.config/nvim/coc-rc.vim
-source ~/.config/nvim/nerdtree-rc.vim
-source ~/.config/nvim/vim-go-rc.vim
-source ~/.config/nvim/rainbow-parentheses-rc.vim
-source ~/.config/nvim/nerdcommenter-rc.vim
-source ~/.config/nvim/vim-runner-rc.vim
-source ~/.config/nvim/tagbar-rc.vim
-source ~/.config/nvim/vim-markdown-rc.vim
-source ~/.config/nvim/gruvbox-rc.vim
-
 " true colors, needs patched urxvt or st to work right
 set termguicolors
 
-
 " yes
 inoremap jj <ESC>
+
+" also yes
+let mapleader = ","
 
 " setting clipboard to system
 set clipboard=unnamedplus
 
 " cursor blinkage
-:set guicursor=v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait1700-blinkoff400-blinkon950-Cursor/lCursor,sm:block,n:block-blinkon0
+set guicursor=v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait1700-blinkoff400-blinkon950-Cursor/lCursor,sm:block,n:block-blinkon0
 
 " move between splits
-nmap <C-H> :wincmd h<CR>
-nmap <C-J> :wincmd j<CR>
-nmap <C-K> :wincmd k<CR>
-nmap <C-L> :wincmd l<CR>
+nmap <C-h> :wincmd h <CR>
+nmap <C-j> :wincmd j <CR>
+nmap <C-k> :wincmd k <CR>
+nmap <C-l> :wincmd l <CR>
+
 
 " save file whit Ctrl+s
 command -nargs=0 -bar Update if &modified 
@@ -121,3 +116,18 @@ set shortmess+=c
 " don't show signcolumn
 set signcolumn=no
 
+" sourcing rcs
+source ~/.config/nvim/airline-rc.vim
+source ~/.config/nvim/coc-rc.vim
+source ~/.config/nvim/nerdtree-rc.vim
+source ~/.config/nvim/vim-go-rc.vim
+source ~/.config/nvim/rainbow-parentheses-rc.vim
+source ~/.config/nvim/nerdcommenter-rc.vim
+source ~/.config/nvim/vim-runner-rc.vim
+source ~/.config/nvim/tagbar-rc.vim
+source ~/.config/nvim/vim-markdown-rc.vim
+source ~/.config/nvim/leetcode-rc.vim
+source ~/.config/nvim/vem-tabline-rc.vim
+source ~/.config/nvim/vim-which-key-rc.vim
+source ~/.config/nvim/fzf-rc.vim
+source ~/.config/nvim/gruvbox-rc.vim

@@ -49,6 +49,7 @@ install: st
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st-copyout
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st-urlhandler
+	cp -f st.desktop /usr/share/applications
 	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
 	sed "s/VERSION/$(VERSION)/g" < st.1 > $(DESTDIR)$(MANPREFIX)/man1/st.1
 	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/st.1
