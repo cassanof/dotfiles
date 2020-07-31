@@ -33,3 +33,6 @@ coc-go
 coc-vimlsp
 coc-clangd
 ```
+
+Nvidia optimus with hybrid graphics:  
+https://github.com/Askannz/optimus-manager/wiki/Nvidia-GPU-offloading-for-%22hybrid%22-mode
