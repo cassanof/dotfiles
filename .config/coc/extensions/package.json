@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "coc-clangd": ">=0.4.13",
+    "coc-eslint": ">=1.2.7",
+    "coc-go": ">=0.9.2",
+    "coc-highlight": ">=1.2.5",
+    "coc-java": ">=1.4.11",
+    "coc-json": ">=1.2.6",
+    "coc-marketplace": ">=1.7.0",
+    "coc-pairs": ">=1.2.21",
+    "coc-prettier": ">=1.1.17",
+    "coc-rls": ">=1.1.6",
+    "coc-snippets": ">=2.1.28",
+    "coc-tsserver": ">=1.5.3",
+    "coc-vimlsp": ">=0.9.1"
+  }
+}
