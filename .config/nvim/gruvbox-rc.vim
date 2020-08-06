@@ -10,5 +10,5 @@ syntax on
 set background=dark
 
 
-hi link Operator GruvboxRed
+hi link Operator GruvboxOrange
 
