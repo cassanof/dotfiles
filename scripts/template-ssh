@@ -1,0 +1,12 @@
+#!/bin/bash
+
+SERVER_NAME=""
+SERVER_IP=
+
+if [[ $1 = "" ]]; then
+  echo "loging in as root (no user givven) to ${SERVER_NAME}"
+  ssh root@$SERVER_IP
+else
+  echo "loging in as ${1} to ${SERVER_NAME}"
+  ssh $1@$SERVER_IP
+fi
