@@ -115,6 +115,7 @@ export LS_OPTIONS='--color=auto'
 alias ls='ls $LS_OPTIONS'
 alias ll='ls $LS_OPTIONS -Flah'
 alias l='ls $LS_OPTIONS -Fa'
+alias lsc='ls --color=none'
 
 # colored man pages
 export LESS_TERMCAP_mb=$'\e[1;32m'
