@@ -108,8 +108,14 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/go/bin"  # global go bins
 export GOPATH="$HOME/go"
 
+# chrome exec to brave
+export CHROME_EXECUTABLE=/bin/brave
+
 # flutter path
 export PATH="$PATH:$HOME/code/flutter/bin"
+
+# clang-format path
+export PATH="/opt/clang-format-static:$PATH"
 
 
 # ls colors and aliases
@@ -132,4 +138,3 @@ alias nvrun="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME="nvidia" __VK
 
 
 # if there is no line under here, the install script wasn't used or something went wrong
-export DOTFILESDIR=/home/elleven/code/dotfiles
