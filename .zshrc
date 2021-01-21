@@ -154,3 +154,4 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 
 # if there is no line under here, the install script wasn't used or something went wrong
+export DOTFILESDIR=/home/elleven/code/dotfiles
