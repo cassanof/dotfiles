@@ -132,13 +132,6 @@ alias performance='sudo cpupower frequency-set --governor performance'
 # shortcut for sudo pacman
 alias pac='sudo pacman'
 
-# shortcut for sudo netctl
-alias netctl='sudo netctl'
-
-# shortcut for dhcpcd
-alias dhcpcd='sudo dhcpcd'
-
-
 # run with nvidia card - to be used in hybrid mode
 alias nvrun="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME="nvidia" __VK_LAYER_NV_optimus="NVIDIA_only""
 
@@ -150,8 +143,6 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
-
-
 
 # if there is no line under here, the install script wasn't used or something went wrong
 export DOTFILESDIR=/home/elleven/code/dotfiles
