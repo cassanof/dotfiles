@@ -1,0 +1,19 @@
+swipe:
+  3:
+    left:
+      command: "xdotool key ctrl+super+Left" # Workspace left
+    right:
+      command: "xdotool key ctrl+super+Right" # Workspace right
+    up:
+      command: "xdotool key super+r" # ulauncher
+    down:
+      command: "xdotool key super+r" # ulauncher
+  4:
+    left:
+      command: "xdotool key super+Left" # tile window to the left
+    right:
+      command: "xdotool key super+Right" # tile window to the right
+    up:
+      command: "xdotool key super+Up" # tile window up
+    down:
+      command: "xdotool key super+Down" # tile window down
