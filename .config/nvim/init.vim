@@ -33,6 +33,7 @@ Plug 'wlangstroth/vim-racket'
 Plug 'chrisbra/csv.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'vim-python/python-syntax'
+Plug 'bfrg/vim-cpp-modern'
 
 Plug 'morhetz/gruvbox'
 
