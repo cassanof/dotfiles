@@ -36,3 +36,8 @@ coc-clangd
 
 Nvidia optimus with hybrid graphics:  
 https://github.com/Askannz/optimus-manager/wiki/Nvidia-GPU-offloading-for-%22hybrid%22-mode
+
+## GDB stuff
+peda for expoit: https://github.com/longld/peda
+also gef for exploit: https://github.com/hugsy/gef
+dashboard for normal debugging: https://github.com/cyrus-and/gdb-dashboard
