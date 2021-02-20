@@ -1,5 +1,5 @@
 {
-  "jedi.enable": true,
+  "snippets.userSnippetsDirectory": "$HOME/.config/nvim/ultisnips",
   "go.goplsOptions": {
     "completeUnimported": true,
     "usePlaceholders": true
