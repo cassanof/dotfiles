@@ -1,4 +1,5 @@
 {
+  "jedi.enable": true,
   "go.goplsOptions": {
     "completeUnimported": true,
     "usePlaceholders": true

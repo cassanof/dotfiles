@@ -117,7 +117,6 @@ export PATH="$PATH:$HOME/code/flutter/bin"
 # clang-format path
 export PATH="/opt/clang-format-static:$PATH"
 
-
 # ls colors and aliases
 LS_COLORS='di=1;34:fi=37:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=33;100:*.png=35:*.gif=36:*.jpg=35:*.c=92:*.vim=92:*.java=92:*.go=92:*.jar=33:*.py=92:*.h=90:*.txt=94:*.md=7;34:*.doc=7;34:*.docx=7;34:*.odt=7;34:*.csv=7;32:*.xlsx=7;32:*.xlsm=7;32:*.rb=31:*.cpp=92:*.sh=96:*.css=90:*.json=90:*.js=92:*.ts=92:*.html=96:*.pug=96:*.cfg=96:*.conf=96:*.config=96:*.zip=4;33:*.gz=4;33:*.xz=4;33:*.mp4=105:*.mp3=106'
 export LS_OPTIONS='--color=auto'
@@ -131,6 +130,10 @@ alias performance='sudo cpupower frequency-set --governor performance'
 
 # shortcut for sudo pacman
 alias pac='sudo pacman'
+
+# shortcut for python venvs
+alias virtualenv2='python2 -m virtualenv'
+alias virtualenv3='python3 -m virtualenv'
 
 # run with nvidia card - to be used in hybrid mode
 alias nvrun="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME="nvidia" __VK_LAYER_NV_optimus="NVIDIA_only""
