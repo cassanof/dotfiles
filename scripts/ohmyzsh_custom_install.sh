@@ -134,7 +134,8 @@ setup_zshrc() {
 
 	if [ -e "${dotfilesdir}/.zshrc" ]; then
 		echo "${BLUE}.zshrc in dotfiles found! putting it in the home folder!${RESET}"
-		cp -f "${dotfilesdir}/.zshrc" "${HOME}/.zshrc"
+    cp -f "${dotfilesdir}/.zshrc" "${HOME}/.zshrc"
+    cp -f "${dotfilesdir}/elleven.zsh-theme" "${HOME}/.oh-my-zsh/custom/themes/elleven.zsh-theme"
 		echo "export DOTFILESDIR=${dotfilesdir}" >> "${HOME}/.zshrc"
 		return
 	fi
