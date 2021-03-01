@@ -39,7 +39,12 @@ export UPDATE_ZSH_DAYS=5
 DISABLE_LS_COLORS="false"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
+
+# show full path in terminal title
+function precmd () {
+  print -Pn - '\e]0;%~\a'
+}
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="false"
@@ -147,7 +152,7 @@ alias aslr_off='echo 0 | sudo tee /proc/sys/kernel/randomize_va_space'
 alias aslr_on='echo 2 | sudo tee /proc/sys/kernel/randomize_va_space'
 
 # shortcut for msfconsole with sigtrap
-alias msfc='/usr/bin/msfconsole_sigtrap.sh'
+alias msfc='/home/elleven/code/dotfiles/scripts/msfconsole_sigtrap.sh --quiet'
 
 # run with nvidia card - to be used in hybrid mode
 alias nvrun="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME="nvidia" __VK_LAYER_NV_optimus="NVIDIA_only""
