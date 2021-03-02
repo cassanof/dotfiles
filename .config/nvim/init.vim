@@ -121,6 +121,10 @@ set shortmess+=c
 " don't show signcolumn
 set signcolumn=no
 
+" set terminal title to vim
+set title
+set titlestring=%(%{expand(\"%:~:h\")}%)#%(%t%)%(\ %M%)%(\ %)NVIM
+
 " sourcing rcs
 source ~/.config/nvim/airline-rc.vim
 source ~/.config/nvim/coc-rc.vim

@@ -8,6 +8,8 @@ cd "$(xwininfo -children -id "$XEMBED" | sed '
     s//\1/
     # Get the directory displayed in the title.
     s/.*://
+    # remove after comment for compatibility
+    s/\#.*$//
     # Convert ~/... to $HOME/...
     s@^~/@'"$HOME"'/@
     # Print only this line.
