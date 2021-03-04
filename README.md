@@ -7,7 +7,7 @@ instead of normal rxvt-unicode
 wal theme: wal --theme hybrid-material  
 
 remember to use the unclutter-patched package from the AUR  
-unclutter -idle 3 -jitter 125  
+unclutter -grab -idle 3 -jitter 125  
 
 ### neovim stuff to remember
 package list:

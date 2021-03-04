@@ -123,7 +123,7 @@ set signcolumn=no
 
 " set terminal title to vim
 set title
-set titlestring=%(%{expand(\"%:~:h\")}%)#%(%t%)%(\ %M%)%(\ %)NVIM
+set titlestring=%(%{expand(\"%:~:h\")}%)#%(\ %t%)%(\ %M%)%(\ %)NVIM
 
 " sourcing rcs
 source ~/.config/nvim/airline-rc.vim

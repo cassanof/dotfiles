@@ -41,9 +41,27 @@ DISABLE_LS_COLORS="false"
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 
+# Sets the title to whatever is passed as $1
+function set-term-title {
+	# Escape the argument for printf formatting.
+	local title=$1
+	title=${title//\\/\\\\}
+	title=${title//\"/\\\"}
+	title=${title//\%/\%\%}
+
+	# OSC 0, 1, and 2 are the portable escape codes for setting window titles.
+	printf "\e]0;$title\a"  # Both tab and window
+	printf "\e]1;$title\a"  # Tab title
+	printf "\e]2;$title\a"  # Window title
+}
+
 # show full path in terminal title
 function precmd () {
-  print -Pn - '\e]0;%~\a'
+  set-term-title "$(print -P %~)"
+}
+
+function preexec {
+  set-term-title "$(print -P %~# $1)"
 }
 
 # Uncomment the following line to enable command auto-correction.
@@ -156,6 +174,9 @@ alias msfc='/home/elleven/code/dotfiles/scripts/msfconsole_sigtrap.sh --quiet'
 
 # run with nvidia card - to be used in hybrid mode
 alias nvrun="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME="nvidia" __VK_LAYER_NV_optimus="NVIDIA_only""
+
+# script to lookup monero price
+alias xmrprice="curl 'https://min-api.cryptocompare.com/data/price?fsym=XMR&tsyms=BTC,USD,EUR'"
 
 # colored man pages
 export LESS_TERMCAP_mb=$'\e[1;32m'
