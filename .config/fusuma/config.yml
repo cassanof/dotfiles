@@ -1,9 +1,9 @@
 swipe:
   3:
     left:
-      command: "xdotool key ctrl+super+Left" # Workspace left
-    right:
       command: "xdotool key ctrl+super+Right" # Workspace right
+    right:
+      command: "xdotool key ctrl+super+Left" # Workspace left
     up:
       command: "xdotool key super+r" # ulauncher
     down:

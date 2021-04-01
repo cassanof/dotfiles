@@ -56,6 +56,20 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 " Enter to confirm/edit completion
 inoremap <expr> <enter> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+" go to definition
+function! s:GoToDefinition()
+  if CocAction('jumpDefinition')
+    return v:true
+  endif
+
+  let ret = execute("silent! normal \<C-]>")
+  if ret =~ "Error" || ret =~ "错误"
+    call searchdecl(expand('<cword>'))
+  endif
+endfunction
+
+nmap <silent> gd :call <SID>GoToDefinition()<CR>
+
 "Create mappings for function text object, requires document symbols feature of languageserver.
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)

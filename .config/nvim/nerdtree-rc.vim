@@ -59,5 +59,6 @@ let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange
 let g:WebDevIconsDefaultFolderSymbolColor = s:green
 
 let g:NERDTreeIgnore = ['^node_modules$']
-nmap <C-n> :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTreeFocus<CR>
+inoremap <C-n> <Esc>:NERDTreeFocus<CR>
 
