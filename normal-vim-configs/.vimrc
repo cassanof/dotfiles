@@ -21,6 +21,11 @@ nmap <C-l> :wincmd l <CR>
 " remembers cursor location
 set viminfo='100,\"2500,:200,%,n~/.viminfo
 
+" syntax
+syntax on
+
+" system clipboard
+set clipboard=unnamedplus
 
 set relativenumber
 set nu
