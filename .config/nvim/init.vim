@@ -63,6 +63,8 @@ nmap <C-j> :wincmd j <CR>
 nmap <C-k> :wincmd k <CR>
 nmap <C-l> :wincmd l <CR>
 
+" set mouse on
+set mouse=a
 
 " save file whit Ctrl+s
 command -nargs=0 -bar Update if &modified 
