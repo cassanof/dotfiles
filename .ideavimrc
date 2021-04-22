@@ -1,0 +1,14 @@
+let mapleader = ","
+
+" imap jj <Esc>
+
+set clipboard+=unnamed
+set hlsearch
+set scrolloff=10
+set ignorecase smartcase
+set showmode
+set history=10000
+set nu
+set rnu
+set easymotion
+set timeoutlen=55
