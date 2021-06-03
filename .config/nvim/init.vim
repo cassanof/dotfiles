@@ -121,8 +121,8 @@ set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
-" don't show signcolumn
-set signcolumn=no
+" auto signcolumn
+set signcolumn=auto
 
 " set terminal title to vim
 set title
