@@ -35,6 +35,7 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'vim-python/python-syntax'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
+Plug 'leafgarland/typescript-vim'
 
 Plug 'morhetz/gruvbox'
 
@@ -45,10 +46,7 @@ call plug#end()
 " true colors, needs patched urxvt or st to work right
 set termguicolors
 
-" yes
-inoremap jj <ESC>
-
-" also yes
+" leader key to ,
 let mapleader = ","
 
 " setting clipboard to system
