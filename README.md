@@ -4,10 +4,7 @@ credit to https://github.com/LukeSmithxyz/st and https://suckless.org/
 install : rxvt-unicode-cvs-patched-wideglyphs from AUR   
 instead of normal rxvt-unicode  
 
-wal theme: wal --theme hybrid-material  
-
-remember to use the unclutter-patched package from the AUR  
-unclutter -grab -idle 3 -jitter 125  
+wal theme: wal --theme base16-gruvbox-medium  
 
 ### neovim stuff to remember
 package list:
