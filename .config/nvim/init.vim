@@ -7,7 +7,6 @@ call plug#begin('~/.nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -20,11 +19,9 @@ Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'luochen1990/rainbow'
 Plug 'plasticboy/vim-markdown'
-Plug 'xianzhon/vim-code-runner'
 Plug 'elleven11/vim-runner'
 Plug 'honza/vim-snippets'
-Plug 'majutsushi/tagbar'
-Plug 'liuchengxu/vim-which-key'
+" Plug 'majutsushi/tagbar'
 Plug 'pacha/vem-tabline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -36,6 +33,7 @@ Plug 'vim-python/python-syntax'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'leafgarland/typescript-vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 Plug 'morhetz/gruvbox'
 
@@ -165,11 +163,10 @@ source ~/.config/nvim/vim-go-rc.vim
 source ~/.config/nvim/rainbow-parentheses-rc.vim
 source ~/.config/nvim/nerdcommenter-rc.vim
 source ~/.config/nvim/vim-runner-rc.vim
-source ~/.config/nvim/tagbar-rc.vim
+" source ~/.config/nvim/tagbar-rc.vim
 source ~/.config/nvim/vim-markdown-rc.vim
 source ~/.config/nvim/leetcode-rc.vim
 source ~/.config/nvim/vem-tabline-rc.vim
-source ~/.config/nvim/vim-which-key-rc.vim
 source ~/.config/nvim/fzf-rc.vim
 source ~/.config/nvim/gruvbox-rc.vim
 source ~/.config/nvim/python-syntax-rc.vim
