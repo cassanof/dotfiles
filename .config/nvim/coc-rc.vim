@@ -47,9 +47,6 @@ augroup end
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
-" Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
-
 " Close completion window when completion is done
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 

@@ -6,11 +6,26 @@
   },
   "clangd.path": "/home/elleven/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
   "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "javascript", "go"],
+  "diagnostic.checkCurrentLine": true,
   "cSpell.enabledLanguageIds": [
     "git-commit",
     "latex",
     "markdown",
     "plaintext",
     "text"
+  ],
+  "cSpell.userWords": [
+    "APFS",
+    "ASLR",
+    "Ciphey",
+    "Exfiltration",
+    "Journaling",
+    "Mitigations",
+    "NTFS",
+    "Splittable",
+    "numericals",
+    "overwritable",
+    "shellcode",
+    "unsanitized"
   ]
 }
