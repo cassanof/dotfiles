@@ -36,7 +36,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'rust-lang/rust.vim'
 
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 
 " Initialize plugin system
 call plug#end()
