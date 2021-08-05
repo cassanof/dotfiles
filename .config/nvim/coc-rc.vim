@@ -53,6 +53,9 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 " Enter to confirm/edit completion
 inoremap <expr> <enter> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+" Set max completition suggestions
+set pumheight=15
+
 " go to definition
 function! s:GoToDefinition()
   if CocAction('jumpDefinition')
