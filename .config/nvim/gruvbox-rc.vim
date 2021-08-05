@@ -12,3 +12,5 @@ set background=dark
 
 hi link Operator GruvboxOrange
 
+" fixes CoC diagnostics window colors
+hi Quote ctermbg=109 guifg=#83a598
