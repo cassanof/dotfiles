@@ -48,8 +48,8 @@ xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap for codelens action
-xmap <leader>r  <Plug>(coc-codeaction-selected)
-nmap <leader>r  <Plug>(coc-codeaction-selected)
+xmap <leader>r  <Plug>(coc-codelens-action)
+nmap <leader>r  <Plug>(coc-codelens-action)
 
 " Close completion window when completion is done
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
