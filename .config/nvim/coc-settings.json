@@ -6,9 +6,15 @@
   },
   "codeLens.enable": true,
   "clangd.path": "/home/elleven/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
-  "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "javascript", "go"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "go"
+  ],
   "diagnostic.checkCurrentLine": true,
   "suggest.labelMaxLength": 75,
+  "rust-analyzer.procMacro.enable": true,
   "cSpell.enabledLanguageIds": [
     "git-commit",
     "latex",
