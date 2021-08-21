@@ -30,11 +30,12 @@ Plug 'wlangstroth/vim-racket'
 Plug 'chrisbra/csv.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'vim-python/python-syntax'
-Plug 'bfrg/vim-cpp-modern'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'leafgarland/typescript-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'rust-lang/rust.vim'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'rhysd/vim-clang-format'
 
 Plug 'gruvbox-community/gruvbox'
 
