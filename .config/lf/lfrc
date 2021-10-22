@@ -1,0 +1,30 @@
+set color256 true
+set drawbox true
+set icons true
+set ignorecase true
+set scrolloff 4
+
+cmd open ${{
+  case $(file --mime-type "$f" -bL) in
+    text/*|application/json) $EDITOR "$f";;
+    video/*|image/*/application/pdf) xdg-open "$f" & disown;;
+    *) xdg-open "$f";;
+  esac
+}}
+
+cmd mkdir %[ -n "${1}" ] && mkdir -p ${@} || echo "Argument needed"
+cmd mkfile %[ -n "${1}" ] && touch ${@} || echo "Argument needed"
+
+
+# remove unwanted maps
+map m
+map d
+map u
+
+map a set hidden!
+map md push $mkdir<space>
+map mf push $touch<space>
+map dd delete
+map x cut
+map v toggle
+map V invert
