@@ -1,3 +1,4 @@
+#include <X11/XF86keysym.h>
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
@@ -15,7 +16,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4", "5" };
 
 static const Rule rules[] = {
         /* xprop(1):
@@ -59,6 +60,17 @@ static const char *termcmd[]  = { "tabbed", "-c", "/home/elleven/code/dotfiles/s
 static const char *dmenurun[]  = { "j4-dmenu-desktop", "--term", "st", NULL };
 static const char *browser[]  = { "librewolf", NULL };
 
+// brightness keybinds
+static const char *brightness[2][4] = {
+  {"xbacklight", "-inc", "5%", NULL},
+  {"xbacklight", "-dec", "5%", NULL}};
+
+// volume keybinds
+static const char *volume[3][4] = { 
+  {"pactl", "set-sink-volume", "0", "+10%"},
+  {"pactl", "set-sink-volume", "0", "-10%"},
+  {"pactl", "set-sink-mute", "0", "toggle"}};
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenurun } },
@@ -86,15 +98,16 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+  {0,       XF86XK_MonBrightnessUp, spawn,    {.v=brightness[0]} },
+  {0,       XF86XK_MonBrightnessDown, spawn, {.v=brightness[1]} },
+  {0,       XF86XK_AudioRaiseVolume, spawn,   {.v=volume[0]} },
+  {0,       XF86XK_AudioLowerVolume, spawn,   {.v=volume[1]} },
+  {0,       XF86XK_AudioMute,        spawn,   {.v=volume[2]} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
