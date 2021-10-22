@@ -12,7 +12,7 @@ static const char *fonts[]          = { "Jetbrains Mono:style=Regular:size=13" }
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { "#bbbbbb", "#222222", "#222222" },
-	[SchemeSel] =  { "#eeeeee", "#FF4D4D", "#FF4D1E" },
+	[SchemeSel] =  { "#eeeeee", "#FF4D4D", "#E47F2D" },
 };
 
 /* tagging */
@@ -75,7 +75,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenurun } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browser } },
-	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_Return,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
