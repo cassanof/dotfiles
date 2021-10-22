@@ -1,0 +1,7 @@
+xset r rate 300 50 &
+wal --theme base16-gruvbox-medium &
+slstatus &
+picom --no-fading-openclose &
+xss-lock dm-tool lock &
+fusuma -d
+feh --bg-scale ~/Pictures/archapplebackground.png &
