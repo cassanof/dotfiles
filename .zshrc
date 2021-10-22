@@ -110,6 +110,9 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
+# Preferred browser
+export BROWSER='librewolf'
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
