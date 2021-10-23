@@ -11,8 +11,8 @@ static const char *fonts[]          = { "Jetbrains Mono:style=Regular:size=13" }
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { "#bbbbbb", "#222222", "#222222" },
-	[SchemeSel] =  { "#eeeeee", "#FF4D4D", "#E47F2D" },
+	[SchemeNorm] = { "#EBDBB2", "#282828", "#282828" },
+	[SchemeSel] =  { "#EBDBB2", "#98971A", "#FE8019" },
 };
 
 /* tagging */
