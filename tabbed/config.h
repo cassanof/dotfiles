@@ -2,10 +2,10 @@
 
 /* appearance */
 static const char font[]        = "Jetbrains Mono:size=9";
-static const char* normbgcolor  = "#222222";
-static const char* normfgcolor  = "#cccccc";
+static const char* normbgcolor  = "#282828";
+static const char* normfgcolor  = "#EBDBB2";
 static const char* selbgcolor   = "#D65d0e";
-static const char* selfgcolor   = "#ffffff";
+static const char* selfgcolor   = "#EBDBB2";
 static const char* urgbgcolor   = "#111111";
 static const char* urgfgcolor   = "#cc0000";
 static const char before[]      = "<";
