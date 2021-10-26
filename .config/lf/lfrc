@@ -1,7 +1,7 @@
 set drawbox true
 set icons true
 set ignorecase true
-set scrolloff 4
+set scrolloff 10
 
 cmd open ${{
   case $(file --mime-type "$f" -bL) in
@@ -14,6 +14,13 @@ cmd open ${{
 cmd mkdir %[ -n "${1}" ] && mkdir -p ${@} || echo "Argument needed"
 cmd mkfile %[ -n "${1}" ] && touch ${@} || echo "Argument needed"
 
+cmd trash ${{
+    set -f
+    printf "$fx\n"
+    printf "send file to trash? [y/n]"
+    read ans
+    [ $ans = "y" ] && send2trash $fx
+}}
 
 # remove unwanted maps
 map m
@@ -23,7 +30,8 @@ map u
 map a set hidden!
 map md push $mkdir<space>
 map mf push $touch<space>
-map dd delete
+map dd trash
+map dr delete
 map x cut
 map v toggle
 map V invert
