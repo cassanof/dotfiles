@@ -60,6 +60,7 @@ static const char *termcmd[]  = { "tabbed", "-c", "/home/elleven/code/dotfiles/s
 static const char *dmenurun[]  = { "j4-dmenu-desktop", "--term", "st", NULL };
 static const char *browser[]  = { "librewolf", NULL };
 static const char *filemanager[]  = { "st", "lf", NULL };
+static const char *calendar[]  = { "gsimplecal", NULL };
 
 // brightness keybinds
 static const char *brightness[2][4] = {
@@ -77,6 +78,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenurun } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browser } },
 	{ MODKEY,                       XK_f,      spawn,          {.v = filemanager } },
+	{ MODKEY,                       XK_c,      spawn,          {.v = calendar } },
 	{ MODKEY|ShiftMask,             XK_Return,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
