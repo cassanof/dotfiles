@@ -65,10 +65,11 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ cpu_perc, " C %4s% | ", NULL },
+	{ cpu_perc, " C %4s | ", NULL },
 	{ disk_free, "D %1sGB | ", "/" },
-	{ ram_perc, "R %3s% | ", NULL },
-	{ battery_perc, "B %s%% ", "BAT0" },
+	{ ram_perc, "R %3s | ", NULL },
+	{ battery_perc, "B %s ", "BAT0" },
 	{ battery_state, "%s | ", "BAT0" },
-	{ datetime, "%s",     "%F %T" },
+  { wifi_essid, "W %s | ", "wlp3s0" }, // change iface name for new install
+	{ datetime, "%s",     "%m/%d %T" },
 };
