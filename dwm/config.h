@@ -3,6 +3,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int gappx     = 8;        /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -61,17 +62,18 @@ static const char *dmenurun[]  = { "j4-dmenu-desktop", "--term", "st", NULL };
 static const char *browser[]  = { "librewolf", NULL };
 static const char *filemanager[]  = { "st", "lf", NULL };
 static const char *calendar[]  = { "gsimplecal", NULL };
+static const char *audioctl[]  = { "pavucontrol", NULL };
 
 // brightness keybinds
 static const char *brightness[2][4] = {
-  {"xbacklight", "-inc", "5%", NULL},
-  {"xbacklight", "-dec", "5%", NULL}};
+  {"goblight", "+10", NULL},
+  {"goblight", "-10", NULL}};
 
 // volume keybinds
-static const char *volume[3][4] = { 
-  {"pactl", "set-sink-volume", "0", "+10%"},
-  {"pactl", "set-sink-volume", "0", "-10%"},
-  {"pactl", "set-sink-mute", "0", "toggle"}};
+static const char *volume[3][5] = { 
+  {"amixer", "-q" , "sset", "Master", "5%+"},
+  {"amixer", "-q" , "sset", "Master", "5%-"},
+  {"amixer", "-q" , "sset", "Master", "toggle"}};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -79,7 +81,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          {.v = browser } },
 	{ MODKEY,                       XK_f,      spawn,          {.v = filemanager } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = calendar } },
-	{ MODKEY|ShiftMask,             XK_Return,      spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = audioctl } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
