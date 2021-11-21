@@ -69,11 +69,6 @@ static const char *brightness[2][4] = {
   {"goblight", "+10", NULL},
   {"goblight", "-10", NULL}};
 
-// volume keybinds
-static const char *volume[3][5] = { 
-  {"amixer", "-q" , "sset", "Master", "5%+"},
-  {"amixer", "-q" , "sset", "Master", "5%-"},
-  {"amixer", "-q" , "sset", "Master", "toggle"}};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -105,11 +100,14 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-  {0,       XF86XK_MonBrightnessUp, spawn,    {.v=brightness[0]} },
-  {0,       XF86XK_MonBrightnessDown, spawn, {.v=brightness[1]} },
-  {0,       XF86XK_AudioRaiseVolume, spawn,   {.v=volume[0]} },
-  {0,       XF86XK_AudioLowerVolume, spawn,   {.v=volume[1]} },
-  {0,       XF86XK_AudioMute,        spawn,   {.v=volume[2]} },
+  {0,       XF86XK_MonBrightnessUp, spawn,                   {.v=brightness[0]} },
+  {0,       XF86XK_MonBrightnessDown, spawn,                 {.v=brightness[1]} },
+  {0,       XF86XK_AudioRaiseVolume, spawn,                  
+    SHCMD("/home/elleven/code/dotfiles/scripts/change_volume.sh 5%+") },
+  {0,       XF86XK_AudioLowerVolume, spawn,                  
+    SHCMD("/home/elleven/code/dotfiles/scripts/change_volume.sh 5%-") },
+  {0,       XF86XK_AudioMute,        spawn,                  
+    SHCMD("/home/elleven/code/dotfiles/scripts/change_volume.sh toggle") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
