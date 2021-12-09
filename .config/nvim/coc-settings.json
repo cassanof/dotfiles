@@ -12,6 +12,7 @@
     "typescript",
     "typescriptreact",
     "javascript",
+    "java",
     "go"
   ],
   "diagnostic.checkCurrentLine": true,
@@ -37,5 +38,13 @@
     "overwritable",
     "shellcode",
     "unsanitized"
+  ],
+  "java.format.settings.url": "/home/elleven/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
+  "java.format.enabled": true,
+  "java.format.onType.enabled": true,
+  "java.format.comments.enabled": true,
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "/home/elleven/.classpath/*"
   ]
 }
