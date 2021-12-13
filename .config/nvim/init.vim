@@ -130,36 +130,10 @@ set signcolumn=auto
 set title
 set titlestring=%(%{expand(\"%:~:h\")}%)#%(\ %t%)%(\ %M%)%(\ %)NVIM
 
-" exit neovim terminal with esc
-tnoremap <Esc> <C-\><C-n>
-
-" terminal split bottom
-let g:term_buf = 0
-let g:term_win = 0
-function! TermToggle(height)
-    if win_gotoid(g:term_win)
-        hide
-    else
-        botright new
-        exec "resize " . a:height
-        try
-            exec "buffer " . g:term_buf
-        catch
-            call termopen($SHELL, {"detach": 0})
-            let g:term_buf = bufnr("")
-            set nonumber
-            set norelativenumber
-            set signcolumn=no
-        endtry
-        startinsert!
-        let g:term_win = win_getid()
-    endif
-endfunction
-
 " toggle terminal on/off 
-nnoremap <C-t> :call TermToggle(12)<CR>
-inoremap <C-t> <Esc>:call TermToggle(12)<CR>
-tnoremap <C-t> <C-\><C-n>:call TermToggle(12)<CR>
+nnoremap <C-t> :call runner#TermToggle(12, $SHELL)<CR>
+inoremap <C-t> <Esc>:call runner#TermToggle(12, $SHELL)<CR>
+tnoremap <C-t> <C-\><C-n>:call runner#TermToggle(12, $SHELL)<CR>
 
 " sourcing rcs
 source ~/.config/nvim/airline-rc.vim
