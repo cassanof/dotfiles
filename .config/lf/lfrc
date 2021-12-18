@@ -5,7 +5,6 @@ set scrolloff 10
 
 cmd open ${{
   case $(file --mime-type "$f" -bL) in
-    text/*|application/json) $EDITOR "$f";;
     video/*|image/*/application/pdf) xdg-open "$f" & disown;;
     *) xdg-open "$f";;
   esac
