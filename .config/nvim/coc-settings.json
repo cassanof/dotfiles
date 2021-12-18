@@ -31,6 +31,7 @@
     "ASLR",
     "Ciphey",
     "Exfiltration",
+    "FWAE",
     "Journaling",
     "Mitigations",
     "NTFS",
@@ -39,6 +40,14 @@
     "overwritable",
     "shellcode",
     "unsanitized"
+  ],
+  "cSpell.languageSettings": [
+      {
+          "languageId": "markdown",
+          "ignoreRegExpList": [
+              "/^\\s*```[\\s\\S]*?^\\s*```/gm"
+          ]
+      }
   ],
   "java.format.settings.url": "/home/elleven/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
   "java.format.enabled": true,

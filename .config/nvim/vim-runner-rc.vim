@@ -10,6 +10,7 @@ let g:runner_print_timestamp = 1
 " Print time usage of do all actions by default.
 let g:runner_print_time_usage = 0
 
+
 " Show the comment information by default.
 let g:runner_show_info = 1
 
