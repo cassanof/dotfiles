@@ -62,7 +62,6 @@ static const char *dmenurun[]  = { "j4-dmenu-desktop", "--term", "st", NULL };
 static const char *browser[]  = { "librewolf", NULL };
 static const char *filemanager[]  = { "st", "lf", NULL };
 static const char *calendar[]  = { "gsimplecal", NULL };
-static const char *audioctl[]  = { "pavucontrol", NULL };
 
 // brightness keybinds
 static const char *brightness[2][4] = {
@@ -76,7 +75,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          {.v = browser } },
 	{ MODKEY,                       XK_f,      spawn,          {.v = filemanager } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = calendar } },
-	{ MODKEY,                       XK_p,      spawn,          {.v = audioctl } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -108,8 +106,8 @@ static Key keys[] = {
     SHCMD("/home/elleven/code/dotfiles/scripts/change_volume.sh 5%+") },
   {0,       XF86XK_AudioLowerVolume, spawn,                  
     SHCMD("/home/elleven/code/dotfiles/scripts/change_volume.sh 5%-") },
-  {0,       XF86XK_AudioMute,        spawn,                  
-    SHCMD("/home/elleven/code/dotfiles/scripts/change_volume.sh toggle") },
+//  {0,       XF86XK_AudioMute,        spawn,                  
+//    SHCMD("/home/elleven/code/dotfiles/scripts/change_volume.sh toggle") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
