@@ -36,6 +36,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'rust-lang/rust.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'rhysd/vim-clang-format'
+Plug 'neovimhaskell/haskell-vim'
 
 Plug 'gruvbox-community/gruvbox'
 
