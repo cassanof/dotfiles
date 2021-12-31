@@ -37,6 +37,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'rhysd/vim-clang-format'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'alx741/vim-hindent'
 
 Plug 'gruvbox-community/gruvbox'
 
@@ -152,3 +153,4 @@ source ~/.config/nvim/fzf-rc.vim
 source ~/.config/nvim/gruvbox-rc.vim
 source ~/.config/nvim/python-syntax-rc.vim
 source ~/.config/nvim/gitgutter-rc.vim
+source ~/.config/nvim/haskell-rc.vim
