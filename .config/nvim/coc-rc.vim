@@ -32,6 +32,11 @@ nmap <F2> <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+" remap for format all
+nnoremap <C-i> :Format<CR>
+inoremap <C-i> <Esc>:Format<CR>
+
+
 " Remap for quickfix window
 nmap <leader>k <Plug>(coc-quickfix)
 

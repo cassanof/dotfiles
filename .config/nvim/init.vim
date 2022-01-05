@@ -26,7 +26,7 @@ Plug 'pacha/vem-tabline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
-Plug 'wlangstroth/vim-racket'
+Plug 'elleven11/vim-racket'
 Plug 'chrisbra/csv.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'vim-python/python-syntax'
@@ -38,6 +38,7 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'rhysd/vim-clang-format'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-hindent'
+Plug 'jpalardy/vim-slime'
 
 Plug 'gruvbox-community/gruvbox'
 
@@ -133,9 +134,12 @@ set title
 set titlestring=%(%{expand(\"%:~:h\")}%)#%(\ %t%)%(\ %M%)%(\ %)NVIM
 
 " toggle terminal on/off 
-nnoremap <C-t> :call runner#TermToggle(12, $SHELL)<CR>
-inoremap <C-t> <Esc>:call runner#TermToggle(12, $SHELL)<CR>
-tnoremap <C-t> <C-\><C-n>:call runner#TermToggle(12, $SHELL)<CR>
+nnoremap <C-t> :call runner#TerminalToggle($SHELL, 12, "normal")<CR>
+inoremap <C-t> <Esc>:call runner#TerminalToggle($SHELL, 12, "normal")<CR>
+tnoremap <C-t> <C-\><C-n>:call runner#TerminalToggle($SHELL, 12, "normal")<CR>
+
+" easy escape from terminal mode
+tnoremap <Esc> <C-\><C-n>
 
 " sourcing rcs
 source ~/.config/nvim/airline-rc.vim
@@ -154,3 +158,4 @@ source ~/.config/nvim/gruvbox-rc.vim
 source ~/.config/nvim/python-syntax-rc.vim
 source ~/.config/nvim/gitgutter-rc.vim
 source ~/.config/nvim/haskell-rc.vim
+source ~/.config/nvim/vim-all-lisps.vim
