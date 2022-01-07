@@ -133,6 +133,10 @@ set signcolumn=auto
 set title
 set titlestring=%(%{expand(\"%:~:h\")}%)#%(\ %t%)%(\ %M%)%(\ %)NVIM
 
+" Clear highlighting on escape in normal mode
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
+
 " toggle terminal on/off 
 nnoremap <C-t> :call runner#TerminalToggle($SHELL, 12, "normal")<CR>
 inoremap <C-t> <Esc>:call runner#TerminalToggle($SHELL, 12, "normal")<CR>
