@@ -4,7 +4,6 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-highlight',
-  \ 'coc-pairs',
   \ 'coc-prettier', 
   \ ]
 
@@ -33,8 +32,8 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 " remap for format all
-nnoremap <C-i> :Format<CR>
-inoremap <C-i> <Esc>:Format<CR>
+nmap <C-r> :Format<CR>
+imap <C-r> <Esc>:Format<CR>
 
 
 " Remap for quickfix window
