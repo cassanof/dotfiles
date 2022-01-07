@@ -32,8 +32,8 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 " remap for format all
-nmap <C-r> :Format<CR>
-imap <C-r> <Esc>:Format<CR>
+nmap <C-f> :Format<CR>
+imap <C-f> <Esc>:Format<CR>
 
 
 " Remap for quickfix window
