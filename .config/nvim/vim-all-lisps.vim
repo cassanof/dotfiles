@@ -18,3 +18,6 @@ au Filetype racket let b:AutoPairs = lispPairs
 au Filetype scheme let b:AutoPairs = lispPairs
 au Filetype lisp let b:AutoPairs = lispPairs
 au Filetype clojure let b:AutoPairs = lispPairs
+
+au filetype racket set lisp
+au filetype racket set autoindent
