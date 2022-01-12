@@ -18,6 +18,9 @@ let g:rainbow_conf = {
 \		'haskell': {
 \			'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/\v\{\ze[^-]/ end=/}/ fold'], 
 \		},
+\		'ocaml': {
+\			'parentheses': ['start=/(\*\@!/ end=/)/ fold'],
+\		},
 \		'vim': {
 \			'parentheses_options': 'containedin=vimFuncBody', 
 \		},
