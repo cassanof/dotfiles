@@ -94,9 +94,6 @@ set shiftwidth=2
 " always uses spaces instead of tab characters
 set expandtab
 
-" for java, use 4 spaces
-autocmd Filetype java setlocal tabstop=4 shiftwidth=4 softtabstop=4
-
 " keep undos in a file
 set undofile
 set undodir=~/.local/share/nvim/cache
