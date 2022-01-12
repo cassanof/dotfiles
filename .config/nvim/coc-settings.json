@@ -14,6 +14,7 @@
     "javascript",
     "racket",
     "java",
+    "ocaml",
     "go"
   ],
   "diagnostic.checkCurrentLine": true,
@@ -63,6 +64,13 @@
       "command": "racket",
       "args": ["--lib", "racket-langserver"],
       "filetypes": ["scheme", "racket"]
+    },
+    "ocaml": {
+      "command": "ocamllsp",
+      "rootPatterns": ["dune-project"],
+      "filetypes": ["ocaml"],
+      "initializationOptions": {},
+      "settings": {}
     }
   }
 }
