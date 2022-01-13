@@ -109,7 +109,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " Character 'limit' line
-set colorcolumn=110
+set colorcolumn=100
 
 " don't continue to format comment tags after enter
 set formatoptions-=cro
