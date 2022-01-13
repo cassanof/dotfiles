@@ -160,3 +160,4 @@ source ~/.config/nvim/python-syntax-rc.vim
 source ~/.config/nvim/gitgutter-rc.vim
 source ~/.config/nvim/haskell-rc.vim
 source ~/.config/nvim/vim-all-lisps.vim
+source ~/.config/nvim/ocaml-rc.vim
