@@ -153,6 +153,10 @@ export PATH="/home/elleven/.local/bin/:$PATH"
 # ruby bins path
 export PATH="/home/elleven/.local/share/gem/ruby/2.7.0/bin/:$PATH"
 
+# cargo bin
+export PATH="/home/elleven/.cargo/bin/:$PATH"
+
+
 # classpath
 export CLASSPATH="/home/elleven/.classpath/*:$CLASSPATH"
 
