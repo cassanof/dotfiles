@@ -1,2 +1,3 @@
 #!/bin/zsh
-javac $1 && java tester.Main $2
+targetClass=$2
+javac $1 && java tester.Main "${targetClass/.class/}"
