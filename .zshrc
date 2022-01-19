@@ -206,9 +206,6 @@ alias jlab="jupyter lab --browser=librewolf"
 # alias for send2trash
 alias tm="send2trash -v"
 
-# alias for testing for fundies 2
-alias f2test="java -cp $CLASSPATH:$PWD tester.Main"
-
 # colored man pages
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
