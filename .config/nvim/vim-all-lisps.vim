@@ -9,6 +9,8 @@ let g:racket_hash_lang_dict = {
       \   'plai/typed': 'racket',
       \   'plait': 'racket',
       \   'plaitypus': 'racket',
+      \   'rosette': 'racket',
+      \   'rosette/safe': 'racket',
       \   'br/quicklang': 'racket',
       \   'scribble/base': 'scribble',
       \   'scribble/manual': 'scribble',
