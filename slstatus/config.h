@@ -65,6 +65,7 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
+  { keyboard_indicators, " %s | ", "C?" }, // caps lock indicator
 	{ cpu_perc, " C %4s | ", NULL },
 	{ disk_free, "D %1sGB | ", "/" },
 	{ ram_perc, "R %3s | ", NULL },
