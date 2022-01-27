@@ -14,7 +14,6 @@
     "javascript",
     "racket",
     "java",
-    "ocaml",
     "go"
   ],
   "diagnostic.checkCurrentLine": true,
