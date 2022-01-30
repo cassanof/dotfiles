@@ -19,7 +19,7 @@ let g:runner_auto_remove_tmp = 0
 
 " Use <F5> to compile and run code by default.
 " Feel free to change mapping you like.
-let g:runner_run_key = "<F5>"
+let g:runner_run_key = "<F1>"
 
 " Set tmp dir for output.
 let g:runner_tmp_dir = "/tmp/vim-runner/"

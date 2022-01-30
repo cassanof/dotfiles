@@ -39,6 +39,8 @@ Plug 'rhysd/vim-clang-format'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-hindent'
 Plug 'jpalardy/vim-slime'
+Plug 'puremourning/vimspector'
+
 
 Plug 'gruvbox-community/gruvbox'
 
@@ -161,3 +163,4 @@ source ~/.config/nvim/gitgutter-rc.vim
 source ~/.config/nvim/haskell-rc.vim
 source ~/.config/nvim/vim-all-lisps.vim
 source ~/.config/nvim/ocaml-rc.vim
+source ~/.config/nvim/vimspector.vim
