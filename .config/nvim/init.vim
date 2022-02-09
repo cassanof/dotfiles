@@ -21,7 +21,7 @@ Plug 'luochen1990/rainbow'
 Plug 'plasticboy/vim-markdown'
 Plug 'elleven11/vim-runner'
 Plug 'honza/vim-snippets'
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 Plug 'pacha/vem-tabline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -152,7 +152,7 @@ source ~/.config/nvim/vim-go-rc.vim
 source ~/.config/nvim/rainbow-parentheses-rc.vim
 source ~/.config/nvim/nerdcommenter-rc.vim
 source ~/.config/nvim/vim-runner-rc.vim
-" source ~/.config/nvim/tagbar-rc.vim
+source ~/.config/nvim/tagbar-rc.vim
 source ~/.config/nvim/vim-markdown-rc.vim
 source ~/.config/nvim/leetcode-rc.vim
 source ~/.config/nvim/vem-tabline-rc.vim
