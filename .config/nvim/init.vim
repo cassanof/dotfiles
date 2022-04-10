@@ -144,6 +144,9 @@ tnoremap <C-t> <C-\><C-n>:call runner#TerminalToggle($SHELL, 12, "normal")<CR>
 " easy escape from terminal mode
 tnoremap <Esc> <C-\><C-n>
 
+" set cwd to this file's cwd
+nnoremap <leader>d :cd %:p:h<CR>
+
 " sourcing rcs
 source ~/.config/nvim/airline-rc.vim
 source ~/.config/nvim/coc-rc.vim
