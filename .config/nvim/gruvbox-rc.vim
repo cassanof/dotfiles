@@ -12,5 +12,9 @@ set background=dark
 
 hi link Operator GruvboxOrange
 
+" coc notification highlights
+hi link CocNotificationProgress GruvboxGreen
+hi link CocNotificationButton GruvboxOrange
+
 " fixes CoC diagnostics window colors
 hi Quote ctermbg=109 guifg=#83a598

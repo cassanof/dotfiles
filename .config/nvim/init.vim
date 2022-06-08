@@ -40,7 +40,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-hindent'
 Plug 'jpalardy/vim-slime'
 Plug 'puremourning/vimspector'
-
+Plug 'github/copilot.vim'
 
 Plug 'gruvbox-community/gruvbox'
 
