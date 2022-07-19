@@ -1,4 +1,5 @@
 #include <X11/XF86keysym.h>
+#define PrintScreenDWM	    0x0000ff61
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
@@ -104,6 +105,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
   {0,       XF86XK_MonBrightnessUp, spawn,                   {.v=brightness[0]} },
   {0,       XF86XK_MonBrightnessDown, spawn,                 {.v=brightness[1]} },
+  {0,       PrintScreenDWM, spawn,                  
+    SHCMD("scrot -s - > /tmp/pic.png && mv /tmp/pic.png $HOME/Pictures/$(: | dmenu -i -p \"gib output name\").png")},
   {0,       XF86XK_AudioRaiseVolume, spawn,                  
     SHCMD("/home/elleven/code/dotfiles/scripts/change_volume.sh 5%+") },
   {0,       XF86XK_AudioLowerVolume, spawn,                  
