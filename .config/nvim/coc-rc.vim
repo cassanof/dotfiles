@@ -59,7 +59,12 @@ nmap <leader>r  <Plug>(coc-codelens-action)
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Enter to confirm/edit completion
-inoremap <expr> <enter> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+
+" copilot disable tab, use <leader>c on insert mode
+imap <silent><script><expr> <leader>c copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
 
 " Set max completition suggestions
 set pumheight=15
@@ -102,16 +107,17 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 function! s:check_back_space() abort
   let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+  return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
+
+" Insert <tab> when previous text is space, refresh completion if not.
+inoremap <silent><expr> <TAB>
+  \ coc#pum#visible() ? coc#pum#next(1):
+  \ <SID>check_back_space() ? "\<Tab>" :
+  \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 
 let g:coc_snippet_next = '<tab>'
