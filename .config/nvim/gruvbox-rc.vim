@@ -18,3 +18,8 @@ hi link CocNotificationButton GruvboxOrange
 
 " fixes CoC diagnostics window colors
 hi Quote ctermbg=109 guifg=#83a598
+  
+" coc autocomplete
+hi link CocMenuSel GruvboxGreen
+hi link CocPumSearch GruvboxGreenBold
+hi link CocPumDeprecated GruvboxRedBold
