@@ -64,6 +64,47 @@ function preexec {
   set-term-title "$(print -P %~# $1)"
 }
 
+function x11-clip-wrap-widgets() {
+    # NB: Assume we are the first wrapper and that we only wrap native widgets
+    # See zsh-autosuggestions.zsh for a more generic and more robust wrapper
+    local copy_or_paste=$1
+    shift
+
+    for widget in $@; do
+        # Ugh, zsh doesn't have closures
+        if [[ $copy_or_paste == "copy" ]]; then
+            eval "
+            function _x11-clip-wrapped-$widget() {
+                zle .$widget
+                echo -n "\$CUTBUFFER" | xclip -in -selection clipboard
+            }
+            "
+        else
+            eval "
+            function _x11-clip-wrapped-$widget() {
+                CUTBUFFER=\$(xclip -out -selection clipboard)
+                zle .$widget
+            }
+            "
+        fi
+
+        zle -N $widget _x11-clip-wrapped-$widget
+    done
+}
+
+
+local copy_widgets=(
+    vi-yank vi-yank-eol vi-delete vi-backward-kill-word vi-change-whole-line
+)
+local paste_widgets=(
+    vi-put-{before,after}
+)
+
+# NB: can atm. only wrap native widgets
+x11-clip-wrap-widgets copy $copy_widgets
+x11-clip-wrap-widgets paste  $paste_widgets
+
+
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="false"
 
@@ -151,14 +192,19 @@ export PATH="/opt/clang-format-static:$PATH"
 export PATH="/home/elleven/.local/bin/:$PATH"
 
 # ruby bins path
-export PATH="/home/elleven/.local/share/gem/ruby/2.7.0/bin/:$PATH"
+export PATH="/home/elleven/.local/share/gem/ruby/3.0.0/bin/:$PATH"
 
 # cargo bin
 export PATH="/home/elleven/.cargo/bin/:$PATH"
 
-
 # classpath
 export CLASSPATH="/home/elleven/.classpath/*:$CLASSPATH"
+
+# neovim + latex + zathura stuff
+export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
+
+# ocaml
+eval $(opam env)
 
 # ==================== #
 #       ALIASES        #
@@ -187,9 +233,6 @@ alias aslr_on='echo 2 | sudo tee /proc/sys/kernel/randomize_va_space'
 # shortcut for msfconsole with sigtrap
 alias msfc='/home/elleven/code/dotfiles/scripts/msfconsole_sigtrap.sh --quiet'
 
-# run with nvidia card - to be used in hybrid mode
-alias nvrun="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME="nvidia" __VK_LAYER_NV_optimus="NVIDIA_only""
-
 # script to lookup monero price
 alias xmrprice="curl 'https://min-api.cryptocompare.com/data/price?fsym=XMR&tsyms=BTC,USD,EUR'"
 
@@ -206,6 +249,10 @@ alias jlab="jupyter lab --browser=librewolf"
 # alias for send2trash
 alias tm="send2trash -v"
 
+# alias for pandoc
+alias pandock=\
+'docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/latex'
+
 # colored man pages
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
@@ -216,3 +263,4 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # if there is no line under here, the install script wasn't used or something went wrong
+export DOTFILESDIR=/home/elleven/code/dotfiles
