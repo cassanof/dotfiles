@@ -253,6 +253,9 @@ alias tm="send2trash -v"
 alias pandock=\
 'docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/latex'
 
+# alias to see files in a dir
+alias imgdir="feh -g 640x480 -d -S filename"
+
 # colored man pages
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
