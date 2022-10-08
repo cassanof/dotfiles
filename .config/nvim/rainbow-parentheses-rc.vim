@@ -9,6 +9,9 @@ let g:rainbow_conf = {
 \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
 \	'separately': {
 \		'*': {},
+\   'nerdtree': {
+\ 		'guifgs': ['DarkOliveGreen3'], 
+\   },
 \		'markdown': {
 \			'parentheses_options': 'containedin=markdownCode contained', 
 \		},

@@ -9,7 +9,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
@@ -34,13 +33,14 @@ Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'leafgarland/typescript-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'rust-lang/rust.vim'
-Plug 'jackguo380/vim-lsp-cxx-highlight'
+" Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'rhysd/vim-clang-format'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-hindent'
 Plug 'jpalardy/vim-slime'
 Plug 'puremourning/vimspector'
 Plug 'github/copilot.vim'
+Plug 'lervag/vimtex'
 
 Plug 'gruvbox-community/gruvbox'
 
@@ -167,3 +167,4 @@ source ~/.config/nvim/haskell-rc.vim
 source ~/.config/nvim/vim-all-lisps.vim
 source ~/.config/nvim/ocaml-rc.vim
 source ~/.config/nvim/vimspector.vim
+source ~/.config/nvim/latex-rc.vim

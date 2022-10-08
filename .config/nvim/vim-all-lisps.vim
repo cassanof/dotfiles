@@ -2,13 +2,13 @@ let g:slime_target = "neovim"
 
 let g:racket_hash_lang_dict = {
       \   'racket/base': 'racket',
-      \   'typed/racket': 'racket',
-      \   'typed/racket/base': 'racket',
       \   'htdp/bsl': 'racket',
       \   'htdp/bsl+': 'racket',
       \   'htdp/isl': 'racket',
       \   'htdp/isl+': 'racket',
       \   'htdp/asl': 'racket',
+      \   'typed/racket': 'racket',
+      \   'typed/racket/base': 'racket',
       \   'br': 'racket',
       \   'plai': 'racket',
       \   'plai/typed': 'racket',
