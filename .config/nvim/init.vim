@@ -68,6 +68,8 @@ nmap <C-l> :wincmd l <CR>
 
 " set mouse on
 set mouse=a
+set mousemodel=extend
+
 
 " save file whit Ctrl+s
 command -nargs=0 -bar Update if &modified 
