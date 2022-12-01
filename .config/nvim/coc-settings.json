@@ -1,5 +1,6 @@
 {
   "snippets.userSnippetsDirectory": "$HOME/.config/nvim/ultisnips",
+  "highlight.disableLanguages": ["txt", ""],
   "go.goplsOptions": {
     "completeUnimported": true,
     "usePlaceholders": true
