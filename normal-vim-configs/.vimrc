@@ -4,9 +4,6 @@
 " i use the awesome version,
 " but the vimrc works in the basic one too
 
-" most important! press jj to escape insert mode 
-imap jj <Esc>
-
 let mapleader = ","
 
 " cursor blinkage
@@ -27,7 +24,6 @@ syntax on
 " system clipboard
 set clipboard=unnamedplus
 
-set relativenumber
 set nu
 
 set smarttab
