@@ -106,7 +106,7 @@ static Key keys[] = {
   {0,       XF86XK_MonBrightnessUp, spawn,                   {.v=brightness[0]} },
   {0,       XF86XK_MonBrightnessDown, spawn,                 {.v=brightness[1]} },
   {0,       PrintScreenDWM, spawn,                  
-    SHCMD("scrot -s - > /tmp/pic.png && mv /tmp/pic.png $HOME/Downloads/$(: | dmenu -i -p \"gib output name\").png")},
+    SHCMD("maim --select /tmp/pic.png && mv /tmp/pic.png $HOME/Downloads/$(: | dmenu -i -p \"gib output name\").png")},
   {0,       XF86XK_AudioRaiseVolume, spawn,                  
     SHCMD("/home/elleven/code/dotfiles/scripts/change_volume.sh 5%+") },
   {0,       XF86XK_AudioLowerVolume, spawn,                  
