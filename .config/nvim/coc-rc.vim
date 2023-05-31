@@ -55,6 +55,12 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 xmap <leader>r  <Plug>(coc-codelens-action)
 nmap <leader>r  <Plug>(coc-codelens-action)
 
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 " Close completion window when completion is done
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
@@ -64,6 +70,9 @@ inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 " copilot disable tab, use <leader>c on insert mode
 imap <silent><script><expr> <leader>c copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
+let g:copilot_filetypes = {
+   \ 'markdown': v:true,
+   \ }
 
 
 " Set max completition suggestions

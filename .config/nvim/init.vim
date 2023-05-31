@@ -38,7 +38,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-hindent'
 Plug 'jpalardy/vim-slime'
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 Plug 'github/copilot.vim'
 Plug 'lervag/vimtex'
 
@@ -137,11 +137,6 @@ set titlestring=%(%{expand(\"%:~:h\")}%)#%(\ %t%)%(\ %M%)%(\ %)NVIM
 " Clear highlighting on escape in normal mode
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
-
-" toggle terminal on/off 
-nnoremap <C-t> :call runner#TerminalToggle($SHELL, 12, "normal")<CR>
-inoremap <C-t> <Esc>:call runner#TerminalToggle($SHELL, 12, "normal")<CR>
-tnoremap <C-t> <C-\><C-n>:call runner#TerminalToggle($SHELL, 12, "normal")<CR>
 
 " easy escape from terminal mode
 tnoremap <Esc> <C-\><C-n>

@@ -5,14 +5,17 @@
     "completeUnimported": true,
     "usePlaceholders": true
   },
-  "codeLens.enable": true,
+  "codeLens.enable": false,
   "clangd.path": "/usr/bin/clangd",
   "clangd.semanticHighlighting": true,
+  "clangd.compilationDatabaseCandidates": [
+    "${workspaceFolder}/build",
+    "${workspaceFolder}/build/compile_commands.json"
+  ],
   "coc.preferences.semanticTokensHighlights": false,
   "coc.preferences.formatOnSaveFiletypes": ["racket"],
   "diagnostic.checkCurrentLine": true,
   "suggest.labelMaxLength": 75,
-  "rust-analyzer.procMacro.enable": true,
   "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.diagnostics.disabled": ["unresolved-proc-macro"],
   "cSpell.enabledLanguageIds": [
@@ -26,12 +29,14 @@
     "APFS",
     "ASLR",
     "Cassano",
+    "Ciphertext",
     "Ciphey",
     "Combinator",
     "Contractionary",
     "Excludability",
     "Exfiltration",
     "FWAE",
+    "Gmail",
     "Journaling",
     "Mitigations",
     "NTFS",
@@ -73,5 +78,6 @@
       "initializationOptions": {},
       "settings": {}
     }
-  }
+  },
+  "snippets.ultisnips.pythonPrompt": false
 }
