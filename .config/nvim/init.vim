@@ -41,6 +41,8 @@ Plug 'jpalardy/vim-slime'
 " Plug 'puremourning/vimspector'
 Plug 'github/copilot.vim'
 Plug 'lervag/vimtex'
+Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
+
 
 Plug 'gruvbox-community/gruvbox'
 
