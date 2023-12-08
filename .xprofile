@@ -5,4 +5,7 @@ picom --no-fading-openclose &
 /bin/sh ~/code/dotfiles/scripts/notify_battery.sh &
 dunst &
 fusuma -d
-feh --bg-scale ~/Pictures/bg-arch.png &
+feh --bg-scale ~/Pictures/omega-bg.png &
+
+xmodmap -e 'keycode 112=Left' &
+xmodmap -e 'keycode 117=Right' &
