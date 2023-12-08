@@ -31,7 +31,7 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'vim-python/python-syntax'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'leafgarland/typescript-vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 Plug 'rust-lang/rust.vim'
 " Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'rhysd/vim-clang-format'
