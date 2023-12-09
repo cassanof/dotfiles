@@ -44,7 +44,7 @@ Plug 'lervag/vimtex'
 Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
 
 
-Plug 'gruvbox-community/gruvbox'
+Plug 'cassanof/gruvbox'
 
 " Initialize plugin system
 call plug#end()
