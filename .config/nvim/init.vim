@@ -40,6 +40,7 @@ Plug 'alx741/vim-hindent'
 Plug 'jpalardy/vim-slime'
 " Plug 'puremourning/vimspector'
 Plug 'github/copilot.vim'
+" Plug 'huggingface/llm.nvim'
 Plug 'lervag/vimtex'
 Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -167,3 +168,5 @@ source ~/.config/nvim/vim-all-lisps.vim
 source ~/.config/nvim/ocaml-rc.vim
 source ~/.config/nvim/vimspector.vim
 source ~/.config/nvim/latex-rc.vim
+source ~/.config/nvim/copilot-rc.vim
+" lua require('llmcfg')
