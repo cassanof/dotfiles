@@ -140,6 +140,7 @@ plugins=(
         )
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.env/bin/activate
 
 # User configuration
 
@@ -255,6 +256,10 @@ alias pandock=\
 
 # alias to see files in a dir
 alias imgdir="feh -g 640x480 -d -S filename"
+
+# use doas
+alias sudo='doas'
+alias sudoedit='doas rnano'
 
 # colored man pages
 export LESS_TERMCAP_mb=$'\e[1;32m'
