@@ -60,7 +60,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *termcmd[]  = { "tabbed", "-c", "/home/elleven/code/dotfiles/scripts/st_start_wininfo.sh", NULL };
 static const char *dmenurun[]  = { "j4-dmenu-desktop", "--term", "st", NULL };
-static const char *browser[]  = { "librewolf", NULL };
+static const char *browser[]  = { "firefox", NULL };
 static const char *filemanager[]  = { "st", "lf", NULL };
 static const char *calendar[]  = { "gsimplecal", NULL };
 static const char *audioctl[]  = { "pavucontrol", NULL };
