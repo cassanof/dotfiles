@@ -5,6 +5,7 @@
     "completeUnimported": true,
     "usePlaceholders": true
   },
+  "inlayHint.enable": false,
   "codeLens.enable": false,
   "clangd.path": "/usr/bin/clangd",
   "clangd.semanticHighlighting": true,
