@@ -25,7 +25,7 @@ Plug 'pacha/vem-tabline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
-Plug 'elleven11/vim-racket'
+" Plug 'elleven11/vim-racket'
 Plug 'chrisbra/csv.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'vim-python/python-syntax'

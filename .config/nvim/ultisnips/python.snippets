@@ -693,3 +693,15 @@ endsnippet
 snippet sout "stdout write to buffer" i
 sys.stdout.buffer.write(${1:payload})
 endsnippet
+
+snippet argmain "main with argparse" b
+def main(args):
+	pass
+
+
+if __name__ == "__main__":
+	import argparse
+	parser = argparse.ArgumentParser()
+	args = parser.parse_args()
+	main(args)
+endsnippet
