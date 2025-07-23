@@ -58,7 +58,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[]  = { "tabbed", "-c", "/home/elleven/code/dotfiles/scripts/st_start_wininfo.sh", NULL };
+static const char *termcmd[]  = { "tabbed", "-c", "/home/federico/code/dotfiles/scripts/st_start_wininfo.sh", NULL };
 static const char *dmenurun[]  = { "j4-dmenu-desktop", "--term", "st", NULL };
 static const char *browser[]  = { "firefox", NULL };
 static const char *filemanager[]  = { "st", "lf", NULL };
@@ -108,9 +108,9 @@ static Key keys[] = {
   {0,       PrintScreenDWM, spawn,                  
     SHCMD("maim --select /tmp/pic.png && mv /tmp/pic.png $HOME/Downloads/$(: | dmenu -i -p \"gib output name\").png")},
   {0,       XF86XK_AudioRaiseVolume, spawn,                  
-    SHCMD("/home/elleven/code/dotfiles/scripts/change_volume.sh 5%+") },
+    SHCMD("/home/federico/code/dotfiles/scripts/change_volume.sh 5%+") },
   {0,       XF86XK_AudioLowerVolume, spawn,                  
-    SHCMD("/home/elleven/code/dotfiles/scripts/change_volume.sh 5%-") },
+    SHCMD("/home/federico/code/dotfiles/scripts/change_volume.sh 5%-") },
 //  {0,       XF86XK_AudioMute,        spawn,                  
 //    SHCMD("/home/elleven/code/dotfiles/scripts/change_volume.sh toggle") },
 	TAGKEYS(                        XK_1,                      0)
