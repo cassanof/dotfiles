@@ -1,3 +1,13 @@
 node_modules/
-dwm/dwm
 *.o
+
+# build binaries
+dwm/dwm
+dmenu/dmenu
+dmenu/stest
+slstatus/slstatus
+surf/surf
+surf/*.so
+st/st
+tabbed/tabbed
+tabbed/xembed
