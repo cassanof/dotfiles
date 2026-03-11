@@ -72,6 +72,6 @@ static const struct arg args[] = {
 	{ battery_perc, "B %s ", "BAT0" },
 	{ battery_state, "%s | ", "BAT0" },
 	{ run_command, "V %s | ", "/bin/sh -c \"amixer get Master | tail -n1 | grep -Po '\\[\\K[^%]*' | head -n1\"" },
-	{ wifi_essid, "W %s | ", "wlp0s20f3" }, // change iface name for new install
+	{ wifi_essid, "W %s | ", "wlp46s0" }, // change iface name for new install
 	{ datetime, "%s",     "%m/%d %T" },
 };

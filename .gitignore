@@ -11,3 +11,5 @@ surf/*.so
 st/st
 tabbed/tabbed
 tabbed/xembed
+
+.cursor

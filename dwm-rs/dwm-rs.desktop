@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=dwm-rs
+Comment=DWM
+Exec=dwm-rs
+Icon=dwm
+Type=XSession
