@@ -105,7 +105,7 @@ unsafe fn broken_ptr() -> *const c_char {
 }
 
 fn tagmask() -> c_uint {
-    (1u32 << config::TAGS.len()) - 1
+    (1u32 << config::tags().len()) - 1
 }
 
 unsafe fn cleanmask(mask: c_uint) -> c_uint {
@@ -154,7 +154,7 @@ unsafe fn layout_has_arrange(monitor: *mut Monitor) -> bool {
 }
 
 unsafe fn is_monocle_layout(monitor: *mut Monitor) -> bool {
-    selected_layout(monitor) == &config::LAYOUTS[1] as *const Layout
+    selected_layout(monitor) == config::monocle_layout()
 }
 
 unsafe fn handle_event(event: *mut xlib::XEvent) {
@@ -195,7 +195,7 @@ pub unsafe fn applyrules(client: *mut Client) {
         class_hint.res_name
     };
 
-    for rule in config::RULES.iter() {
+    for rule in config::rules().iter() {
         let title_match =
             rule.title.is_null() || !libc::strstr((*client).name.as_ptr(), rule.title).is_null();
         let class_match = rule.class.is_null() || !libc::strstr(class, rule.class).is_null();
@@ -277,7 +277,8 @@ pub unsafe fn applysizehints(
     if *w < st.bh {
         *w = st.bh;
     }
-    if config::RESIZEHINTS != 0 || (*client).isfloating != 0 || !layout_has_arrange((*client).mon) {
+    if config::resizehints() != 0 || (*client).isfloating != 0 || !layout_has_arrange((*client).mon)
+    {
         baseismin = (*client).basew == (*client).minw && (*client).baseh == (*client).minh;
         if !baseismin {
             *w -= (*client).basew;
@@ -360,7 +361,7 @@ unsafe fn swallow(parent: *mut Client, child: *mut Client) {
     if (*child).noswallow != 0 || (*child).isterminal != 0 {
         return;
     }
-    if (*child).noswallow != 0 && config::SWALLOWFLOATING == 0 && (*child).isfloating != 0 {
+    if (*child).noswallow != 0 && config::swallowfloating() == 0 && (*child).isfloating != 0 {
         return;
     }
 
@@ -429,13 +430,13 @@ unsafe fn buttonpress(event: *mut xlib::XEvent) {
         let mut index = 0usize;
         let mut x = 0;
         loop {
-            x += textw(config::TAGS[index]);
-            if !(ev.x >= x && index + 1 < config::TAGS.len()) {
+            x += textw(config::tags()[index]);
+            if !(ev.x >= x && index + 1 < config::tags().len()) {
                 break;
             }
             index += 1;
         }
-        if index < config::TAGS.len() {
+        if index < config::tags().len() {
             click = CLK_TAG_BAR;
             arg.ui = 1 << index;
         } else if ev.x < x + st.blw {
@@ -455,7 +456,7 @@ unsafe fn buttonpress(event: *mut xlib::XEvent) {
         }
     }
 
-    for button in config::BUTTONS.iter() {
+    for button in config::buttons().iter() {
         if click == button.click
             && button.func.is_some()
             && button.button == ev.button
@@ -511,7 +512,7 @@ unsafe fn cleanup() {
     }
     for scheme in st.scheme.drain(..) {
         if !scheme.is_null() {
-            let slice = ptr::slice_from_raw_parts_mut(scheme, config::COLORS[0].len());
+            let slice = ptr::slice_from_raw_parts_mut(scheme, config::colors()[0].len());
             drop(Box::from_raw(slice));
         }
     }
@@ -710,13 +711,13 @@ unsafe fn createmon() -> *mut Monitor {
     let monitor = boxed_zeroed::<Monitor>();
     (*monitor).tagset[0] = 1;
     (*monitor).tagset[1] = 1;
-    (*monitor).mfact = config::MFACT;
-    (*monitor).nmaster = config::NMASTER;
-    (*monitor).showbar = config::SHOWBAR;
-    (*monitor).topbar = config::TOPBAR;
-    (*monitor).lt[0] = &config::LAYOUTS[0];
-    (*monitor).lt[1] = &config::LAYOUTS[1 % config::LAYOUTS.len()];
-    util::copy_cstr(&mut (*monitor).ltsymbol, config::LAYOUTS[0].symbol);
+    (*monitor).mfact = config::mfact();
+    (*monitor).nmaster = config::nmaster();
+    (*monitor).showbar = config::showbar();
+    (*monitor).topbar = config::topbar();
+    (*monitor).lt[0] = &config::layouts()[0];
+    (*monitor).lt[1] = &config::layouts()[1 % config::layouts().len()];
+    util::copy_cstr(&mut (*monitor).ltsymbol, config::layouts()[0].symbol);
     monitor
 }
 
@@ -813,7 +814,7 @@ unsafe fn drawbar(monitor: *mut Monitor) {
     }
 
     let mut x = 0;
-    for (index, tag) in config::TAGS.iter().copied().enumerate() {
+    for (index, tag) in config::tags().iter().copied().enumerate() {
         let w = textw(tag);
         let scheme = if (*monitor).tagset[(*monitor).seltags as usize] & (1 << index) != 0 {
             st.scheme[SCHEME_SEL]
@@ -1185,7 +1186,7 @@ unsafe fn grabbuttons(client: *mut Client, focused: c_int) {
             0,
         );
     }
-    for button in config::BUTTONS.iter() {
+    for button in config::buttons().iter() {
         if button.click == CLK_CLIENT_WIN {
             for modifier in modifiers {
                 xlib::XGrabButton(
@@ -1215,7 +1216,7 @@ unsafe fn grabkeys() {
         st.numlockmask | xlib::LockMask,
     ];
     xlib::XUngrabKey(st.dpy, xlib::AnyKey, xlib::AnyModifier, st.root);
-    for key in config::KEYS.iter() {
+    for key in config::keys().iter() {
         let code = xlib::XKeysymToKeycode(st.dpy, key.keysym as c_ulong);
         if code != 0 {
             for modifier in modifiers {
@@ -1255,7 +1256,7 @@ unsafe fn keypress(event: *mut xlib::XEvent) {
     let st = state();
     let ev = &(*event).key;
     let keysym = xlib::XKeycodeToKeysym(st.dpy, ev.keycode as u8, 0) as c_uint;
-    for key in config::KEYS.iter() {
+    for key in config::keys().iter() {
         if key.keysym == keysym && cleanmask(key.mod_) == cleanmask(ev.state) {
             if let Some(func) = key.func {
                 func(&key.arg);
@@ -1332,7 +1333,7 @@ unsafe fn manage(window: xlib::Window, wa: *mut xlib::XWindowAttributes) {
             (*(*client).mon).my
         },
     );
-    (*client).bw = config::BORDERPX as c_int;
+    (*client).bw = config::borderpx() as c_int;
 
     wc.border_width = (*client).bw;
     xlib::XConfigureWindow(st.dpy, window, xlib::CWBorderWidth as c_uint, &mut wc);
@@ -1508,24 +1509,24 @@ pub unsafe fn movemouse(_arg: *const Arg) {
 
                 let mut nx = ocx + (motion.x - x);
                 let mut ny = ocy + (motion.y - y);
-                if ((*st.selmon).wx - nx).abs() < config::SNAP as c_int {
+                if ((*st.selmon).wx - nx).abs() < config::snap() as c_int {
                     nx = (*st.selmon).wx;
                 } else if (((*st.selmon).wx + (*st.selmon).ww) - (nx + width(client))).abs()
-                    < config::SNAP as c_int
+                    < config::snap() as c_int
                 {
                     nx = (*st.selmon).wx + (*st.selmon).ww - width(client);
                 }
-                if ((*st.selmon).wy - ny).abs() < config::SNAP as c_int {
+                if ((*st.selmon).wy - ny).abs() < config::snap() as c_int {
                     ny = (*st.selmon).wy;
                 } else if (((*st.selmon).wy + (*st.selmon).wh) - (ny + height(client))).abs()
-                    < config::SNAP as c_int
+                    < config::snap() as c_int
                 {
                     ny = (*st.selmon).wy + (*st.selmon).wh - height(client);
                 }
                 if (*client).isfloating == 0
                     && layout_has_arrange(st.selmon)
-                    && ((nx - (*client).x).abs() > config::SNAP as c_int
-                        || (ny - (*client).y).abs() > config::SNAP as c_int)
+                    && ((nx - (*client).x).abs() > config::snap() as c_int
+                        || (ny - (*client).y).abs() > config::snap() as c_int)
                 {
                     togglefloating(ptr::null());
                 }
@@ -1742,8 +1743,8 @@ pub unsafe fn resizemouse(_arg: *const Arg) {
                     && (*(*client).mon).wy + nh <= (*st.selmon).wy + (*st.selmon).wh
                     && (*client).isfloating == 0
                     && layout_has_arrange(st.selmon)
-                    && ((nw - (*client).w).abs() > config::SNAP as c_int
-                        || (nh - (*client).h).abs() > config::SNAP as c_int)
+                    && ((nw - (*client).w).abs() > config::snap() as c_int
+                        || (nh - (*client).h).abs() > config::snap() as c_int)
                 {
                     togglefloating(ptr::null());
                 }
@@ -2038,7 +2039,7 @@ unsafe fn setup() {
     st.sh = xlib::XDisplayHeight(st.dpy, st.screen);
     st.root = xlib::XRootWindow(st.dpy, st.screen);
     st.drw = drw::drw_create(st.dpy, st.screen, st.root, st.sw as c_uint, st.sh as c_uint);
-    if drw::drw_fontset_create(st.drw, &config::FONTS).is_null() {
+    if drw::drw_fontset_create(st.drw, config::fonts()).is_null() {
         util::die("no fonts could be loaded.");
     }
     st.lrpad = (*(*st.drw).fonts).h as c_int;
@@ -2088,9 +2089,9 @@ unsafe fn setup() {
     st.cursor[CUR_RESIZE] = drw::drw_cur_create(st.drw, ffi::XC_SIZING);
     st.cursor[CUR_MOVE] = drw::drw_cur_create(st.drw, ffi::XC_FLEUR);
 
-    st.scheme = config::COLORS
+    st.scheme = config::colors()
         .iter()
-        .map(|colors| drw::drw_scm_create(st.drw, colors))
+        .map(|colors| drw::drw_scm_create(st.drw, colors.as_ref()))
         .collect();
 
     updatebars();
@@ -2253,7 +2254,7 @@ pub unsafe fn tile(monitor: *mut Monitor) {
     let mut g = 0;
     let mw = if n > (*monitor).nmaster as c_uint {
         if (*monitor).nmaster != 0 {
-            g = config::GAPPX as c_int;
+            g = config::gappx() as c_int;
             (((*monitor).ww - g) as f32 * (*monitor).mfact) as c_int
         } else {
             0
@@ -2269,7 +2270,7 @@ pub unsafe fn tile(monitor: *mut Monitor) {
     while !client.is_null() {
         if i < (*monitor).nmaster as u32 {
             let r = std::cmp::min(n, (*monitor).nmaster as u32) - i;
-            let h = ((*monitor).wh - my - config::GAPPX as c_int * (r as c_int - 1)) / r as c_int;
+            let h = ((*monitor).wh - my - config::gappx() as c_int * (r as c_int - 1)) / r as c_int;
             resize(
                 client,
                 (*monitor).wx,
@@ -2278,10 +2279,10 @@ pub unsafe fn tile(monitor: *mut Monitor) {
                 h - 2 * (*client).bw,
                 0,
             );
-            my += height(client) + config::GAPPX as c_int;
+            my += height(client) + config::gappx() as c_int;
         } else {
             let r = n - i;
-            let h = ((*monitor).wh - ty - config::GAPPX as c_int * (r as c_int - 1)) / r as c_int;
+            let h = ((*monitor).wh - ty - config::gappx() as c_int * (r as c_int - 1)) / r as c_int;
             resize(
                 client,
                 (*monitor).wx + mw + g,
@@ -2290,7 +2291,7 @@ pub unsafe fn tile(monitor: *mut Monitor) {
                 h - 2 * (*client).bw,
                 0,
             );
-            ty += height(client) + config::GAPPX as c_int;
+            ty += height(client) + config::gappx() as c_int;
         }
         i += 1;
         client = nexttiled((*client).next);
@@ -2764,15 +2765,15 @@ pub unsafe fn view_adjacent(arg: *const Arg) {
     let st = state();
     let curtags = (*st.selmon).tagset[(*st.selmon).seltags as usize];
     let mut seltag = 0i32;
-    for (index, _) in config::TAGS.iter().enumerate() {
+    for (index, _) in config::tags().iter().enumerate() {
         if curtags & (1 << index) != 0 {
             seltag = index as i32;
             break;
         }
     }
-    seltag = (seltag + (*arg).i) % config::TAGS.len() as i32;
+    seltag = (seltag + (*arg).i) % config::tags().len() as i32;
     if seltag < 0 {
-        seltag += config::TAGS.len() as i32;
+        seltag += config::tags().len() as i32;
     }
     let arg = Arg { ui: 1 << seltag };
     view(&arg);
@@ -3063,6 +3064,8 @@ pub unsafe fn main_entry() {
         util::die("usage: dwm [-v]");
     }
 
+    config::load();
+
     if libc::setlocale(libc::LC_CTYPE, b"\0".as_ptr().cast()).is_null()
         || xlib::XSupportsLocale() == 0
     {
@@ -3085,5 +3088,6 @@ pub unsafe fn main_entry() {
     run();
     cleanup();
     xlib::XCloseDisplay(st.dpy);
+    config::unload();
     destroy_state();
 }

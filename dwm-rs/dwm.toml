@@ -1,0 +1,554 @@
+# tags are 1-based in rules and bindings.
+# layouts are zero-based in bindings.
+
+borderpx = 2
+gappx = 8
+snap = 32
+swallowfloating = false
+showbar = true
+topbar = true
+mfact = 0.55
+nmaster = 1
+resizehints = true
+modkey = "Mod4"
+
+fonts = [
+  "Jetbrains Mono:pixelsize=18:antialias=true:autohint=true",
+]
+
+tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+[colors]
+normal = ["#EBDBB2", "#282828", "#282828"]
+selected = ["#EBDBB2", "#98971A", "#FE8019"]
+
+[[rules]]
+class = "Gimp"
+isfloating = true
+
+[[rules]]
+class = "firefox"
+noswallow = -1
+
+[[rules]]
+class = "LibreWolf"
+noswallow = -1
+
+[[rules]]
+class = "Chromium"
+noswallow = -1
+
+[[rules]]
+class = "St"
+isterminal = true
+
+[[rules]]
+title = "Event Tester"
+noswallow = 1
+
+[[layouts]]
+symbol = "[]="
+arrange = "tile"
+
+[[layouts]]
+symbol = "[M]"
+arrange = "monocle"
+
+[commands]
+termcmd = ["tabbed", "-c", "/home/federico/code/dotfiles/scripts/st_start_wininfo.sh"]
+dmenurun = ["j4-dmenu-desktop", "--term", "st"]
+browser = ["firefox"]
+filemanager = ["st", "lf"]
+calendar = ["gsimplecal"]
+audioctl = ["pavucontrol"]
+brightness_up = ["goblight", "+10"]
+brightness_down = ["goblight", "-10"]
+screenshot = ["/bin/sh", "-c", 'maim --select /tmp/pic.png && mv /tmp/pic.png $HOME/Downloads/$(: | dmenu -i -p "gib output name").png']
+volume_up = ["/bin/sh", "-c", "/home/federico/code/dotfiles/scripts/change_volume.sh 5%+"]
+volume_down = ["/bin/sh", "-c", "/home/federico/code/dotfiles/scripts/change_volume.sh 5%-"]
+
+[[keys]]
+modifiers = ["modkey"]
+key = "r"
+action = "spawn"
+command = "dmenurun"
+
+[[keys]]
+modifiers = ["modkey"]
+key = "w"
+action = "spawn"
+command = "browser"
+
+[[keys]]
+modifiers = ["modkey"]
+key = "f"
+action = "spawn"
+command = "filemanager"
+
+[[keys]]
+modifiers = ["modkey"]
+key = "c"
+action = "spawn"
+command = "calendar"
+
+[[keys]]
+modifiers = ["modkey"]
+key = "p"
+action = "spawn"
+command = "audioctl"
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "Return"
+action = "spawn"
+command = "termcmd"
+
+[[keys]]
+modifiers = ["modkey"]
+key = "b"
+action = "togglebar"
+
+[[keys]]
+modifiers = ["modkey"]
+key = "j"
+action = "focusstack"
+int = 1
+
+[[keys]]
+modifiers = ["modkey"]
+key = "k"
+action = "focusstack"
+int = -1
+
+[[keys]]
+modifiers = ["modkey"]
+key = "i"
+action = "incnmaster"
+int = 1
+
+[[keys]]
+modifiers = ["modkey"]
+key = "d"
+action = "incnmaster"
+int = -1
+
+[[keys]]
+modifiers = ["modkey"]
+key = "h"
+action = "setmfact"
+float = -0.05
+
+[[keys]]
+modifiers = ["modkey"]
+key = "l"
+action = "setmfact"
+float = 0.05
+
+[[keys]]
+modifiers = ["modkey"]
+key = "Return"
+action = "zoom"
+
+[[keys]]
+modifiers = ["modkey"]
+key = "Tab"
+action = "view"
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "k"
+action = "view_adjacent"
+int = 1
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "j"
+action = "view_adjacent"
+int = -1
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "l"
+action = "movestack"
+int = 1
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "h"
+action = "movestack"
+int = -1
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "c"
+action = "killclient"
+
+[[keys]]
+modifiers = ["modkey"]
+key = "t"
+action = "setlayout"
+layout = 0
+
+[[keys]]
+modifiers = ["modkey"]
+key = "m"
+action = "setlayout"
+layout = 1
+
+[[keys]]
+modifiers = ["modkey"]
+key = "space"
+action = "setlayout"
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "space"
+action = "togglefloating"
+
+[[keys]]
+modifiers = ["modkey"]
+key = "0"
+action = "view"
+all_tags = true
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "0"
+action = "tag"
+all_tags = true
+
+[[keys]]
+modifiers = ["modkey"]
+key = "comma"
+action = "focusmon"
+int = -1
+
+[[keys]]
+modifiers = ["modkey"]
+key = "period"
+action = "focusmon"
+int = 1
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "comma"
+action = "tagmon"
+int = -1
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "period"
+action = "tagmon"
+int = 1
+
+[[keys]]
+key = "XF86MonBrightnessUp"
+action = "spawn"
+command = "brightness_up"
+
+[[keys]]
+key = "XF86MonBrightnessDown"
+action = "spawn"
+command = "brightness_down"
+
+[[keys]]
+key = "Print"
+action = "spawn"
+command = "screenshot"
+
+[[keys]]
+key = "XF86AudioRaiseVolume"
+action = "spawn"
+command = "volume_up"
+
+[[keys]]
+key = "XF86AudioLowerVolume"
+action = "spawn"
+command = "volume_down"
+
+[[keys]]
+modifiers = ["modkey"]
+key = "1"
+action = "view"
+tag = 1
+
+[[keys]]
+modifiers = ["modkey", "Control"]
+key = "1"
+action = "toggleview"
+tag = 1
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "1"
+action = "tag"
+tag = 1
+
+[[keys]]
+modifiers = ["modkey", "Control", "Shift"]
+key = "1"
+action = "toggletag"
+tag = 1
+
+[[keys]]
+modifiers = ["modkey"]
+key = "2"
+action = "view"
+tag = 2
+
+[[keys]]
+modifiers = ["modkey", "Control"]
+key = "2"
+action = "toggleview"
+tag = 2
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "2"
+action = "tag"
+tag = 2
+
+[[keys]]
+modifiers = ["modkey", "Control", "Shift"]
+key = "2"
+action = "toggletag"
+tag = 2
+
+[[keys]]
+modifiers = ["modkey"]
+key = "3"
+action = "view"
+tag = 3
+
+[[keys]]
+modifiers = ["modkey", "Control"]
+key = "3"
+action = "toggleview"
+tag = 3
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "3"
+action = "tag"
+tag = 3
+
+[[keys]]
+modifiers = ["modkey", "Control", "Shift"]
+key = "3"
+action = "toggletag"
+tag = 3
+
+[[keys]]
+modifiers = ["modkey"]
+key = "4"
+action = "view"
+tag = 4
+
+[[keys]]
+modifiers = ["modkey", "Control"]
+key = "4"
+action = "toggleview"
+tag = 4
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "4"
+action = "tag"
+tag = 4
+
+[[keys]]
+modifiers = ["modkey", "Control", "Shift"]
+key = "4"
+action = "toggletag"
+tag = 4
+
+[[keys]]
+modifiers = ["modkey"]
+key = "5"
+action = "view"
+tag = 5
+
+[[keys]]
+modifiers = ["modkey", "Control"]
+key = "5"
+action = "toggleview"
+tag = 5
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "5"
+action = "tag"
+tag = 5
+
+[[keys]]
+modifiers = ["modkey", "Control", "Shift"]
+key = "5"
+action = "toggletag"
+tag = 5
+
+[[keys]]
+modifiers = ["modkey"]
+key = "6"
+action = "view"
+tag = 6
+
+[[keys]]
+modifiers = ["modkey", "Control"]
+key = "6"
+action = "toggleview"
+tag = 6
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "6"
+action = "tag"
+tag = 6
+
+[[keys]]
+modifiers = ["modkey", "Control", "Shift"]
+key = "6"
+action = "toggletag"
+tag = 6
+
+[[keys]]
+modifiers = ["modkey"]
+key = "7"
+action = "view"
+tag = 7
+
+[[keys]]
+modifiers = ["modkey", "Control"]
+key = "7"
+action = "toggleview"
+tag = 7
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "7"
+action = "tag"
+tag = 7
+
+[[keys]]
+modifiers = ["modkey", "Control", "Shift"]
+key = "7"
+action = "toggletag"
+tag = 7
+
+[[keys]]
+modifiers = ["modkey"]
+key = "8"
+action = "view"
+tag = 8
+
+[[keys]]
+modifiers = ["modkey", "Control"]
+key = "8"
+action = "toggleview"
+tag = 8
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "8"
+action = "tag"
+tag = 8
+
+[[keys]]
+modifiers = ["modkey", "Control", "Shift"]
+key = "8"
+action = "toggletag"
+tag = 8
+
+[[keys]]
+modifiers = ["modkey"]
+key = "9"
+action = "view"
+tag = 9
+
+[[keys]]
+modifiers = ["modkey", "Control"]
+key = "9"
+action = "toggleview"
+tag = 9
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "9"
+action = "tag"
+tag = 9
+
+[[keys]]
+modifiers = ["modkey", "Control", "Shift"]
+key = "9"
+action = "toggletag"
+tag = 9
+
+[[keys]]
+modifiers = ["modkey", "Shift"]
+key = "q"
+action = "quit"
+
+[[buttons]]
+click = "layout_symbol"
+button = "Button1"
+action = "setlayout"
+
+[[buttons]]
+click = "layout_symbol"
+button = "Button3"
+action = "setlayout"
+layout = 1
+
+[[buttons]]
+click = "window_title"
+button = "Button2"
+action = "zoom"
+
+[[buttons]]
+click = "status_text"
+button = "Button2"
+action = "spawn"
+command = "termcmd"
+
+[[buttons]]
+click = "client_win"
+modifiers = ["modkey"]
+button = "Button1"
+action = "movemouse"
+
+[[buttons]]
+click = "client_win"
+modifiers = ["modkey"]
+button = "Button2"
+action = "togglefloating"
+
+[[buttons]]
+click = "client_win"
+modifiers = ["modkey"]
+button = "Button3"
+action = "resizemouse"
+
+[[buttons]]
+click = "tag_bar"
+button = "Button1"
+action = "view"
+clicked_tag = true
+
+[[buttons]]
+click = "tag_bar"
+button = "Button3"
+action = "toggleview"
+clicked_tag = true
+
+[[buttons]]
+click = "tag_bar"
+modifiers = ["modkey"]
+button = "Button1"
+action = "tag"
+clicked_tag = true
+
+[[buttons]]
+click = "tag_bar"
+modifiers = ["modkey"]
+button = "Button3"
+action = "toggletag"
+clicked_tag = true

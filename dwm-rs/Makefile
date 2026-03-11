@@ -7,11 +7,13 @@ SUDO ?= sudo
 PREFIX ?= /usr/local
 BINDIR ?= ${PREFIX}/bin
 XSESSIONSDIR ?= /usr/share/xsessions
+SYSCONFDIR ?= /etc
 
 TARGET ?= release
 CRATE_BIN ?= dwm-rs
 BIN ?= ${CRATE_BIN}
 DESKTOP_ENTRY ?= dwm-rs.desktop
+CONFIG_FILE ?= dwm.toml
 
 CARGO_BUILD_FLAGS_debug =
 CARGO_BUILD_FLAGS_release = --release
@@ -41,6 +43,8 @@ install: all ${GENERATED_DESKTOP_ENTRY}
 	${SUDO} ${INSTALL} -m 755 ${TARGET_BIN} ${DESTDIR}${BINDIR}/${BIN}
 	${SUDO} ${INSTALL} -d ${DESTDIR}${XSESSIONSDIR}
 	${SUDO} ${INSTALL} -m 644 ${GENERATED_DESKTOP_ENTRY} ${DESTDIR}${XSESSIONSDIR}/${DESKTOP_ENTRY}
+	${SUDO} ${INSTALL} -d ${DESTDIR}${SYSCONFDIR}
+	${SUDO} ${INSTALL} -m 644 ${CONFIG_FILE} ${DESTDIR}${SYSCONFDIR}/dwm.toml
 
 uninstall:
 	${SUDO} rm -f ${DESTDIR}${BINDIR}/${BIN}
